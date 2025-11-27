@@ -1,5 +1,4 @@
-import json
 
-with open("perguntas.json", "r", encoding="utf-8") as perguntas:
-    conteudo = json.load(perguntas)
-    print (conteudo)
+print("Bem-vindo ao jogo de perguntas e respostas!")
+
+
