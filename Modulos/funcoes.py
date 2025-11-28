@@ -19,16 +19,25 @@ def enunciado(texto):
     print(texto)
     print("-" * 40)
 
-def menu():
-    print("1. Entrar na competição")
-    print("2. Ver Ranking")
-    print("3. Sair do jogo")
+def menu3(Opc1, Opc2, Opc3):
+    print("1.", Opc1)
+    print("2.", Opc2)
+    print("3.", Opc3)
+    escolha = input("Escolha uma opção: ")
+    return escolha
+
+def menu2(Opc1, Opc2):
+    print("1.", Opc1)
+    print("2.", Opc2)
     escolha = input("Escolha uma opção: ")
     return escolha
 
 def cadastrar():
     Usuario = input("Digite seu nome de usuário: ")
+    senha = input("Digite sua senha: ")
     jog = jogador(Usuario, 0, 0)
+
+'''def entrar()'''
     
 
 
