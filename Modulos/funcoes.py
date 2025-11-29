@@ -2,7 +2,7 @@ import json
 import random
 from classes import *
 
-with open("perguntas.json", "r", encoding="utf-8") as f:
+with open("Data/perguntas.json", "r", encoding="utf-8") as f:
     conteudo = json.load(f)
 def pergunta_aleatoria():
     area = random.choice(conteudo["conteudo"])
@@ -34,6 +34,12 @@ def menu2(Opc1, Opc2):
 
 def cadastrar():
     usuario = input("Crie seu nome de usuário: ")
+    for dados in open("Data/jogadores.json", "r", encoding="utf-8"):
+        dados = json.load(dados)
+        for usuario_encontrado in dados:
+            while usuario_encontrado["nome"] == usuario:
+                print("Nome de usuário já existe. Tente outro.")
+                usuario = input("Crie seu nome de usuário: ")
     senha = input("Crie sua senha: ")
     jog = jogador(usuario, senha, 0, 0)
     with open("jogadores.json", "a", encoding="utf-8") as f:
@@ -44,7 +50,7 @@ def login():
     usuario = input("Digite seu nome de usuário: ")
     senha = input("Digite sua senha: ")
     jog = jogador(usuario, senha)
-    with open("jogadores.json", "r", encoding="utf-8") as f:
+    with open("Data/jogadores.json", "r", encoding="utf-8") as f:
         dados = json.load(f)
         for usuario_encontrado in dados:
             while usuario_encontrado["nome"] != jog.nome or usuario_encontrado["senha"] != jog.senha:
