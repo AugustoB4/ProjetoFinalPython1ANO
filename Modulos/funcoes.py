@@ -33,11 +33,30 @@ def menu2(Opc1, Opc2):
     return escolha
 
 def cadastrar():
-    Usuario = input("Digite seu nome de usuário: ")
-    senha = input("Digite sua senha: ")
-    jog = jogador(Usuario, 0, 0)
+    usuario = input("Crie seu nome de usuário: ")
+    senha = input("Crie sua senha: ")
+    jog = jogador(usuario, senha, 0, 0)
+    with open("jogadores.json", "a", encoding="utf-8") as f:
+        json.dumps(jog.__dict__)
+    print("Cadastro realizado com sucesso!")
 
-'''def entrar()'''
+def login():
+    usuario = input("Digite seu nome de usuário: ")
+    senha = input("Digite sua senha: ")
+    jog = jogador(usuario, senha)
+    with open("jogadores.json", "r", encoding="utf-8") as f:
+        dados = json.load(f)
+        for usuario_encontrado in dados:
+            while usuario_encontrado["nome"] != jog.nome or usuario_encontrado["senha"] != jog.senha:
+                print("Nome de usuário ou senha incorretos. Tente novamente.")
+                usuario = input("Digite seu nome de usuário: ")
+                senha = input("Digite sua senha: ")
+                jog = jogador(usuario, senha)   
+                if usuario_encontrado["nome"] == jog.nome and usuario_encontrado["senha"] == jog.senha:
+                    print("Login realizado com sucesso!")
+                    return usuario_encontrado
+
+            
     
 
 

@@ -1,10 +1,10 @@
 class jogador:
-    def __init__(self, nome, dinheiro, rank, senha):
+    def __init__(self, nome, senha, dinheiro, rank, ):
         self.nome = nome
+        self.senha = senha
         self.dinheiro = dinheiro
         self.rank = rank
-        self.senha = senha
-    
+        
     def atualizar_dinheiro(self, valor):
         self.dinheiro += valor
     
