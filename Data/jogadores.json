@@ -1,0 +1,11 @@
+{
+    "jogadores": [
+        {
+            "nome": "Cezar",
+            "senha": "lindo",
+            "pontos": 0,
+            "dinheiro": 0,
+            "rank": "Iniciante"
+        }
+    ]
+}
