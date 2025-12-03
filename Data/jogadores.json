@@ -6,6 +6,13 @@
             "pontos": 0,
             "dinheiro": 0,
             "rank": "Iniciante"
+        },
+        {
+            "nome": "Anthony",
+            "senha": "333",
+            "pontos": 0,
+            "dinheiro": 0,
+            "rank": "Iniciante"
         }
     ]
 }
