@@ -18,8 +18,7 @@ while True:
         if escolha == "1":
             cadastrar()
             sleep(0.5)
-            enunciado("Cadastro realizado com sucesso! Agora faça login para continuar.")
-            sleep(0.5)
+
             login()
         if escolha == "2":
             login()

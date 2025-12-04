@@ -4,9 +4,6 @@ from classes import *
 from pathlib import Path
 from time import sleep
 
-with open("Data/perguntas.json", "r", encoding="utf-8") as f:
-    conteudo = json.load(f)
-
 def enunciado(texto):
     print("-" * 40)
     print(texto)
@@ -54,23 +51,19 @@ def cadastrar():
     enunciado(f"Jogador {nome} cadastrado com sucesso!")
 
 def login():
-    nome = input("Digite seu nome de usuário: ").strip()
-    senha = input("Digite sua senha: ").strip()
-    with open("Data/jogadores.json", "r", encoding="utf-8") as f:
-        dados = json.load(f)
-    for jogador_data in dados["jogadores"]:
-        while True:
-            if jogador_data["nome"] != nome and jogador_data["senha"] != senha:
-                print ("Nome de usuário ou senha incorretos. Tente novamente.")
-                sleep(0.5)
-                nome = input("Digite seu nome de usuário: ").strip()
-                senha = input("Digite sua senha: ").strip()
+    while True:
+        nome = input("Digite seu nome de usuário: ").strip()
+        senha = input("Digite sua senha: ").strip()
+        with open("Data/jogadores.json", "r", encoding="utf-8") as f:
+            dados = json.load(f)
+        for jogador_data in dados["jogadores"]:
             if jogador_data["nome"] == nome and jogador_data["senha"] == senha:
                 enunciado(f"Bem-vindo de volta, {nome}!")
                 jogador_atual = jogador(nome, senha)
                 jogador_atual.pontuação(jogador_data["pontos"], jogador_data["dinheiro"], jogador_data["rank"])
                 return jogador_atual
-            break
+        enunciado("Nome de usuário ou senha incorretos. Tente novamente.")
+        sleep(0.5)
             
 def ranking():
     with open("Data/jogadores.json", "r", encoding="utf-8") as f:
@@ -82,6 +75,12 @@ def ranking():
         print(f" > {idx}. {jogador_data['nome']}", f"- Pontos: {jogador_data['pontos']}, Dinheiro: {jogador_data['dinheiro']}, Rank: {jogador_data['rank']}")
         sleep(0.5)
     print("-" * 40)
+
+def voltar_menu():
+    enunciado("Voltando ao menu principal...")
+
+
+
 
 
 

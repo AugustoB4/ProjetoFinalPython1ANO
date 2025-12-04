@@ -13,6 +13,13 @@
             "pontos": 0,
             "dinheiro": 0,
             "rank": "Iniciante"
+        },
+        {
+            "nome": "Gustavo",
+            "senha": "Gugu99",
+            "pontos": 0,
+            "dinheiro": 0,
+            "rank": "Iniciante"
         }
     ]
 }
