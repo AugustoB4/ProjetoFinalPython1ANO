@@ -3,30 +3,32 @@
         {
             "nome": "Cezar",
             "senha": "lindo",
-            "pontos": 0,
-            "dinheiro": 0,
-            "rank": "Iniciante"
+            "dinheiro": 0
         },
         {
             "nome": "Anthony",
             "senha": "333",
-            "pontos": 0,
-            "dinheiro": 0,
-            "rank": "Iniciante"
+            "dinheiro": 0
         },
         {
             "nome": "Gustavo",
             "senha": "Gugu99",
-            "pontos": 0,
-            "dinheiro": 0,
-            "rank": "Iniciante"
+            "dinheiro": 1500.0
         },
         {
             "nome": "Maria",
             "senha": "111",
-            "pontos": 0,
-            "dinheiro": 0,
-            "rank": "Iniciante"
+            "dinheiro": 0
+        },
+        {
+            "nome": "Alessandro",
+            "senha": "Rolim",
+            "dinheiro": 0
+        },
+        {
+            "nome": "Alex",
+            "senha": "Alexian0",
+            "dinheiro": 3000.0
         }
     ]
 }

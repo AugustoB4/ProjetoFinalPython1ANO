@@ -2,7 +2,9 @@ from funcoes import *
 from classes import *
 from time import sleep
 
+jogador_atual = None
 enunciado("\033[33mShow do Milhão\033[m".center(45))
+
 while True:
     escolha = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
     if escolha == "3":
@@ -13,10 +15,10 @@ while True:
         input("Pressione ENTER para voltar ao menu...")
         continue
     elif escolha == "1":
-        if jogador_atual != None:
-            break
-        else:
-            enunciado("Conecte-se ou cadastre-se para jogar!")
+        if jogador_atual:
+            Jogo(jogador_atual)
+            continue
+        enunciado("Conecte-se ou cadastre-se para jogar!")
         while True:
             escolha_login = menu2("Cadastrar", "Entrar")
             if escolha_login == "1":
@@ -28,14 +30,13 @@ while True:
                     break           
                 else:
                     print("Usuário/senha incorretos! Tente novamente.\n")
-        enunciado("Bem-vindo ao Show do Milhão!\n")
-        print( "Responda às perguntas e acumule pontos!\n", "Quanto mais pontos, mais perto do milhão.\n", "Boa sorte!")
-        enunciado("Iniciando a competição...")
-        sleep(0.5)
-        Jogo()
-        continue
-    break
+            else:
+                print("Opção inválida.")
+        enunciado("\033[33mShow do Milhão\033[m".center(45))
+        Jogo(jogador_atual)
+        continue 
+    else:
+        print("Opção inválida. Tente novamente.")   
 enunciado(f"Carregando...") 
 sleep(2) 
 enunciado("Obrigado por jogar o Show do Milhão!\nAté a próxima!")
-      
