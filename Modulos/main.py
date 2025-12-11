@@ -2,7 +2,6 @@ from funcoes import *
 from classes import *
 from time import sleep
 
-jogador_atual = None
 enunciado("\033[33mShow do Milhão\033[m".center(45))
 
 while True:
@@ -20,16 +19,17 @@ while True:
             continue
         enunciado("Conecte-se ou cadastre-se para jogar!")
         while True:
-            escolha_login = menu2("Cadastrar", "Entrar")
-            if escolha_login == "1":
+            escolha = menu2("Cadastrar", "Entrar")
+            if escolha == "1":
                 cadastrar()
-                print("\nCadastro concluído! Agora faça login.\n")
-            elif escolha_login == "2":
+                print("\nCadastro concluído!")
+                break
+            elif escolha == "2":
                 jogador_atual = login()
                 if jogador_atual:   
                     break           
                 else:
-                    print("Usuário ou senha incorreta! Tente novamente.\n")
+                     print("Login inválido. Tente novamente.\n")
             else:
                 print("Opção inválida.")
         enunciado("\033[33mShow do Milhão\033[m".center(45))

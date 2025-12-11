@@ -64,18 +64,18 @@ def cadastrar():
     with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
         dados = json.load(f)
     while True:
-        nome = input("Digite seu nome de usuário: ").strip()
+        nome = input("Crie seu nome de usuário: ").strip()
         nome_existente = False
         for usuario in dados["jogadores"]:
             if nome == usuario["nome"]:
                 nome_existente = True
                 break
         if nome_existente:
-            print("Nome de Usuário já existente! Por favor, escolha outro.")
+            print("Nome de Usuário já existente! Escolha outro.")
         else:
             break
     while True:
-        senha = input("Digite sua senha: ").strip()
+        senha = input("Crie uma senha: ").strip()
         if valida_senha(senha):
             break
     novo_jogador = jogador(nome, senha)
@@ -88,6 +88,13 @@ def cadastrar():
         json.dump(dados, f, indent=4, ensure_ascii=False)
         sleep(0.5)
     enunciado(f"Jogador {nome} cadastrado com sucesso!")
+    with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
+            dados = json.load(f)      
+    for jogador_data in dados["jogadores"]:
+        if jogador_data["nome"] == nome and jogador_data["senha"] == senha:
+            jogador_atual = jogador(nome, senha, jogador_data["dinheiro"]) 
+            emcima(f"Seja bem-vindo, {nome}!")
+            return jogador_atual
 
 def login():
     while True:
@@ -100,8 +107,7 @@ def login():
                 jogador_atual = jogador(nome, senha, jogador_data["dinheiro"]) 
                 emcima(f"Bem-vindo de volta, {nome}!")
                 return jogador_atual
-        emcima("Nome de usuário ou senha incorretos. Tente novamente.")
-        return None 
+        embaixo("Nome de usuário ou senha incorretos. Tente novamente.")
 
 #Jogo
 def ranking():
@@ -110,8 +116,8 @@ def ranking():
     jogadores_ordenados = sorted(dados["jogadores"], key=lambda x: x["dinheiro"], reverse=True)
     enunciado("Ranking dos Jogadores")
     sleep(0.5)
-    for idx, jogador_data in enumerate(jogadores_ordenados, start=1):
-        print(f" > {idx}. {jogador_data['nome']}", f" Dinheiro: R${jogador_data['dinheiro']:.2f}") 
+    for i, jogador_data in enumerate(jogadores_ordenados, start=1):
+        print(f" > {i}. {jogador_data['nome']}", f" Dinheiro: R${jogador_data['dinheiro']:.2f}") 
         sleep(0.5)
     print("-" * 40)
 
@@ -128,9 +134,11 @@ def salvar_progresso(jogador_atual):
     if encontrado:
         with open(JOGADORES_PATH, "w", encoding="utf-8") as f:
             json.dump(dados, f, indent=4, ensure_ascii=False)
+            encontrado = True
 
+#Jogo
 def Jogo(jogador_atual):
-    print("Responda às perguntas e acumule pontos!\n",">Quanto mais pontos, mais perto do milhão.\n", "Boa sorte!")
+    print("Responda às perguntas e acumule pontos!\n","Quanto mais pontos, mais perto do milhão.\n","Boa sorte!")
     enunciado("Iniciando a competição...")
     sleep(0.5)
     dinheiro = jogador_atual.saldo

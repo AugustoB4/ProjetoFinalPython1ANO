@@ -9,6 +9,36 @@
             "nome": "sofi",
             "senha": "sofi2009",
             "dinheiro": 5000
+        },
+        {
+            "nome": "Cezar",
+            "senha": "AugustoB4",
+            "dinheiro": 3000.0
+        },
+        {
+            "nome": "Julia",
+            "senha": "xuxa1234",
+            "dinheiro": 0
+        },
+        {
+            "nome": "Nataniel",
+            "senha": "desviad0",
+            "dinheiro": 3000.0
+        },
+        {
+            "nome": "Gustavo",
+            "senha": "Gugu1999",
+            "dinheiro": 0
+        },
+        {
+            "nome": "Anthony",
+            "senha": "passivo1",
+            "dinheiro": 0
+        },
+        {
+            "nome": "Maria",
+            "senha": "Mari1234",
+            "dinheiro": 0
         }
     ]
 }
