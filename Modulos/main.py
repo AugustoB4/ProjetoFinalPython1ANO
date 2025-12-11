@@ -29,7 +29,7 @@ while True:
                 if jogador_atual:   
                     break           
                 else:
-                    print("Usuário/senha incorretos! Tente novamente.\n")
+                    print("Usuário ou senha incorreta! Tente novamente.\n")
             else:
                 print("Opção inválida.")
         enunciado("\033[33mShow do Milhão\033[m".center(45))

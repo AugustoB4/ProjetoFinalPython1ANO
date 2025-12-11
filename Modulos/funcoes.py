@@ -103,6 +103,7 @@ def login():
         emcima("Nome de usuário ou senha incorretos. Tente novamente.")
         return None 
 
+#Jogo
 def ranking():
     with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
         dados = json.load(f)

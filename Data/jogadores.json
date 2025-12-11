@@ -1,34 +1,14 @@
 {
     "jogadores": [
         {
-            "nome": "Cezar",
-            "senha": "lindo",
-            "dinheiro": 0
-        },
-        {
-            "nome": "Anthony",
-            "senha": "333",
-            "dinheiro": 0
-        },
-        {
-            "nome": "Gustavo",
-            "senha": "Gugu99",
-            "dinheiro": 1500.0
-        },
-        {
-            "nome": "Maria",
-            "senha": "111",
-            "dinheiro": 0
-        },
-        {
-            "nome": "Alessandro",
-            "senha": "Rolim",
-            "dinheiro": 0
-        },
-        {
             "nome": "Alex",
             "senha": "Alexian0",
             "dinheiro": 3000.0
+        },
+        {
+            "nome": "sofi",
+            "senha": "sofi2009",
+            "dinheiro": 5000
         }
     ]
 }

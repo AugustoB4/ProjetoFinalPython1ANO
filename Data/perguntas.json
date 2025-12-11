@@ -4,7 +4,8 @@
       "area": "Matemática",
       "perguntas": [
         {
-          "pergunta": "Qual a raiz quadrada de 9?",
+          "dificuldade" : "fácil",
+          "pergunta": "Qual é a raiz quadrada de 9?",
           "respostas": [
             "A: 2",
             "B: 3",
@@ -14,7 +15,7 @@
           "correta": "B"
         },
         {
-          "pergunta": "Quanto é 5 + 5?",
+          "pergunta": "?",
           "respostas": [
             "A: 8",
             "B: 9",
@@ -22,13 +23,15 @@
             "D: 11"
           ],
           "correta": "C"
-        }
+        },
+        "dificuldade" 
       ]
     },
     {
       "area": "História",
       "perguntas": [
         {
+          "dificuldade" : "fácil",
           "pergunta": "Em que ano o Brasil foi descoberto?",
           "respostas": [
             "A: 1492",
