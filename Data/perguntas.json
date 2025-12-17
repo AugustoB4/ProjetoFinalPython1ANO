@@ -15,7 +15,7 @@
           "correta": "B"
         },
         {
-          "pergunta": "?",
+          "pergunta": "Qual é o antecessor do sucessor de 10?",
           "respostas": [
             "A: 8",
             "B: 9",

@@ -13,7 +13,7 @@
         {
             "nome": "Cezar",
             "senha": "AugustoB4",
-            "dinheiro": 3000.0
+            "dinheiro": 4000.0
         },
         {
             "nome": "Julia",
@@ -28,12 +28,12 @@
         {
             "nome": "Gustavo",
             "senha": "Gugu1999",
-            "dinheiro": 0
+            "dinheiro": 1000
         },
         {
             "nome": "Anthony",
-            "senha": "passivo1",
-            "dinheiro": 0
+            "senha": "toni41101",
+            "dinheiro": 3000.0
         },
         {
             "nome": "Maria",
