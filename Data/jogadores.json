@@ -28,7 +28,7 @@
         {
             "nome": "Gustavo",
             "senha": "Gugu1999",
-            "dinheiro": 1000
+            "dinheiro": 8000
         },
         {
             "nome": "Anthony",
@@ -39,6 +39,11 @@
             "nome": "Maria",
             "senha": "Mari1234",
             "dinheiro": 0
+        },
+        {
+            "nome": "sofia",
+            "senha": "12345678s",
+            "dinheiro": 5000
         }
     ]
 }
