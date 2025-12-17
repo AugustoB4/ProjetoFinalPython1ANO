@@ -4,6 +4,7 @@ from time import sleep
 
 enunciado("\033[33mShow do Milhão\033[m".center(45))
 
+jogador_atual = None
 while True:
     escolha = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
     if escolha == "3":
