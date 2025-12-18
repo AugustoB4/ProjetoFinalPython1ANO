@@ -4,7 +4,7 @@
       "area": "Matemática",
       "perguntas": [
         {
-          "dificuldade" : "fácil",
+          "dificuldade": "fácil",
           "pergunta": "Qual é a raiz quadrada de 9?",
           "respostas": [
             "A: 2",
@@ -15,7 +15,7 @@
           "correta": "B"
         },
         {
-          "dificuldade" : "facil",
+          "dificuldade": "fácil",
           "pergunta": "Qual é o valor de π (pi) arredondado para duas casas decimais?",
           "respostas": [
             "A: 3,12",
@@ -26,7 +26,7 @@
           "correta": "B"
         },
         {
-          "dificuldade" : "facil",
+          "dificuldade": "fácil",
           "pergunta": "Qual é o valor de 2 elevado à potência de 5?",
           "respostas": [
             "A: 32",
@@ -37,7 +37,84 @@
           "correta": "A"
         },
         {
-          "dificuldade" : "médio",
+          "dificuldade": "fácil",
+          "pergunta": "Quanto 64 + 26?",
+          "respostas": [
+            "A: 15",
+            "B: 20",
+            "C: 25",
+            "D: 30"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o resultado de 12 x 4?",
+          "respostas": [
+            "A: 44",
+            "B: 46",
+            "C: 48",
+            "D: 50"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Quantos segundos existem em 5 minutos?",
+          "respostas": [
+            "A: 200",
+            "B: 250",
+            "C: 300",
+            "D: 350"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o valor de x na equação x - 10 = 5?",
+          "respostas": [
+            "A: 5",
+            "B: 10",
+            "C: 15",
+            "D: 20"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o número par que vem logo após 18?",
+          "respostas": [
+            "A: 19",
+            "B: 20",
+            "C: 21",
+            "D: 22"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é a metade de 150?",
+          "respostas": [
+            "A: 50",
+            "B: 65",
+            "C: 75",
+            "D: 85"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Como se representa o número 10 em algarismos romanos?",
+          "respostas": [
+            "A: V",
+            "B: X",
+            "C: L",
+            "D: XV"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
           "pergunta": "Qual é o antecessor do sucessor de 10?",
           "respostas": [
             "A: 8",
@@ -48,7 +125,7 @@
           "correta": "C"
         },
         {
-          "dificuldade" : "médio",
+          "dificuldade": "médio",
           "pergunta": "Quantos lados tem um octógono?",
           "respostas": [
             "A: 7",
@@ -59,18 +136,161 @@
           "correta": "B"
         },
         {
-          "dificuldade" : "difícil",
-          "pergunta": "Um produto custa R$ 1500,000 e recebe um desconto de 12%. Qual é o preço final?",
+          "dificuldade": "médio",
+          "pergunta": "Qual é a soma dos ângulos internos de um triângulo?",
           "respostas": [
-            "A: R$ 1310,00",
-            "B: R$ 1320,00",
-            "C: R$ 180,00",
-            "D: R$ 190,00"
+            "A: 90°",
+            "B: 180°",
+            "C: 270°",
+            "D: 360°"
           ],
           "correta": "B"
         },
         {
-          "dificuldade" : "difícil",
+          "dificuldade": "médio",
+          "pergunta": "Qual é o valor de 7 elevado ao quadrado?",
+          "respostas": [
+            "A: 14",
+            "B: 47",
+            "C: 49",
+            "D: 56"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual é o resultado de 100 dividido por 0,5?",
+          "respostas": [
+            "A: 50",
+            "B: 150",
+            "C: 200",
+            "D: 250"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o menor número primo maior que 10?",
+          "respostas": [
+            "A: 11",
+            "B: 13",
+            "C: 15",
+            "D: 17"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual é o valor de x na equação 3x = 27?",
+          "respostas": [
+            "A: 7",
+            "B: 8",
+            "C: 9",
+            "D: 10"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Um ângulo de 90 graus é chamado de?",
+          "respostas": [
+            "A: Agudo",
+            "B: Obtuso",
+            "C: Raso",
+            "D: Reto"
+          ],
+          "correta": "D"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Quanto vale 10% de 10% de 100?",
+          "respostas": [
+            "A: 1",
+            "B: 5",
+            "C: 10",
+            "D: 0,1"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual é a raiz cúbica de 64?",
+          "respostas": [
+            "A: 2",
+            "B: 4",
+            "C: 6",
+            "D: 8"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Quantos gramas há em 1,25 kg?",
+          "respostas": [
+            "A: 125g",
+            "B: 1025g",
+            "C: 1250g",
+            "D: 12500g"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o valor de 2 + 3 x 4?",
+          "respostas": [
+            "A: 20",
+            "B: 14",
+            "C: 12",
+            "D: 18"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Um triângulo com todos os lados iguais é?",
+          "respostas": [
+            "A: Escaleno",
+            "B: Isósceles",
+            "C: Equilátero",
+            "D: Retângulo"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o MMC de 3 e 5?",
+          "respostas": [
+            "A: 8",
+            "B: 10",
+            "C: 15",
+            "D: 30"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o valor decimal da fração 1/4?",
+          "respostas": [
+            "A: 0,20",
+            "B: 0,25",
+            "C: 0,40",
+            "D: 0,50"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Um produto custa R$ 1500,00 e recebe um desconto de 12%. Qual é o preço final?",
+          "respostas": [
+            "A: R$ 1310,00",
+            "B: R$ 1320,00",
+            "C: R$ 1380,00",
+            "D: R$ 1400,00"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
           "pergunta": "Um triângulo tem base 8 cm e altura 5 cm. Qual é sua área?",
           "respostas": [
             "A: 20 cm²",
@@ -79,6 +299,149 @@
             "D: 50 cm²"
           ],
           "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual é o valor de x na equação x² - 9 = 0?",
+          "respostas": [
+            "A: 3",
+            "B: -3",
+            "C: 3 e -3",
+            "D: 9"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual a hipotenusa de um triângulo retângulo com catetos 3 e 4?",
+          "respostas": [
+            "A: 5",
+            "B: 6",
+            "C: 7",
+            "D: 8"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual o logaritmo de 100 na base 10?",
+          "respostas": [
+            "A: 1",
+            "B: 2",
+            "C: 10",
+            "D: 100"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual o valor da soma dos 5 primeiros termos de uma PA onde a1=2 e r=3?",
+          "respostas": [
+            "A: 35",
+            "B: 40",
+            "C: 45",
+            "D: 50"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Se f(x) = x² + 2x, qual o valor de f(3)?",
+          "respostas": [
+            "A: 9",
+            "B: 12",
+            "C: 15",
+            "D: 18"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual é o volume de um cubo com aresta de 3cm?",
+          "respostas": [
+            "A: 9 cm³",
+            "B: 18 cm³",
+            "C: 27 cm³",
+            "D: 81 cm³"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual a probabilidade de tirar um 'As' em um baralho comum de 52 cartas?",
+          "respostas": [
+            "A: 1/52",
+            "B: 4/52",
+            "C: 1/12",
+            "D: 1/10"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Resolva: 2x + 4 > 10. Qual o conjunto solução?",
+          "respostas": [
+            "A: x > 3",
+            "B: x < 3",
+            "C: x > 6",
+            "D: x < 7"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual o valor simplificado de (x^4 * x^3) / x^2?",
+          "respostas": [
+            "A: x^5",
+            "B: x^6",
+            "C: x^7",
+            "D: x^9"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Quantos anagramas possui a palavra 'LUA'?",
+          "respostas": [
+            "A: 3",
+            "B: 6",
+            "C: 9",
+            "D: 12"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que é o cosseno de um ângulo em um triângulo retângulo?",
+          "respostas": [
+            "A: Cat. Oposto / Hipotenusa",
+            "B: Cat. Adjancente / Hipotenusa",
+            "C: Cat. Oposto / Cat. Adjacente",
+            "D: Hipotenusa / Cat. Oposto"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual o valor da diagonal de um quadrado com lado 5? (Considere √2)",
+          "respostas": [
+            "A: 5",
+            "B: 10",
+            "C: 5√2",
+            "D: 25"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual a área de um círculo com raio 2? (Use π=3,14)",
+          "respostas": [
+            "A: 6,28",
+            "B: 12,56",
+            "C: 15,70",
+            "D: 25,12"
+          ],
+          "correta": "B"
         }
       ]
     },
@@ -86,7 +449,7 @@
       "area": "História",
       "perguntas": [
         {
-          "dificuldade" : "fácil",
+          "dificuldade": "fácil",
           "pergunta": "Em que ano o Brasil foi descoberto?",
           "respostas": [
             "A: 1492",
@@ -97,6 +460,7 @@
           "correta": "B"
         },
         {
+          "dificuldade": "fácil",
           "pergunta": "Quem proclamou a independência do Brasil?",
           "respostas": [
             "A: Tiradentes",
@@ -107,7 +471,7 @@
           "correta": "C"
         },
         {
-          "dificuldade" : "fácil",
+          "dificuldade": "fácil",
           "pergunta": "Qual foi o primeiro presidente do Brasil?",
           "respostas": [
             "A: Getúlio Vargas",
@@ -118,7 +482,84 @@
           "correta": "B"
         },
         {
-          "dificuldade" : "médio",
+          "dificuldade": "fácil",
+          "pergunta": "Qual país colonizou o Brasil?",
+          "respostas": [
+            "A: Espanha",
+            "B: Portugal",
+            "C: França",
+            "D: Holanda"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Quem descobriu a América?",
+          "respostas": [
+            "A: Cabral",
+            "B: Colombo",
+            "C: Vasco da Gama",
+            "D: Marco Polo"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Em qual continente surgiu a civilização egípcia?",
+          "respostas": [
+            "A: Europa",
+            "B: Ásia",
+            "C: África",
+            "D: América"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual era a religião oficial do Império Romano após Constantino?",
+          "respostas": [
+            "A: Budismo",
+            "B: Islamismo",
+            "C: Cristianismo",
+            "D: Judaísmo"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Quem libertou os escravos no Brasil?",
+          "respostas": [
+            "A: Dom Pedro II",
+            "B: Princesa Isabel",
+            "C: Zumbi dos Palmares",
+            "D: Marechal Deodoro"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual o nome do primeiro imperador do Brasil?",
+          "respostas": [
+            "A: Dom Pedro I",
+            "B: Dom João VI",
+            "C: Dom Pedro II",
+            "D: Dom Manuel"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Em qual cidade fica a estátua do Cristo Redentor?",
+          "respostas": [
+            "A: São Paulo",
+            "B: Brasília",
+            "C: Rio de Janeiro",
+            "D: Salvador"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
           "pergunta": "Em que ano ocorreu a Proclamação da República no Brasil?",
           "respostas": [
             "A: 1822",
@@ -129,7 +570,161 @@
           "correta": "C"
         },
         {
-          "dificuldade" : "difícil",
+          "dificuldade": "médio",
+          "pergunta": "O que foi o Tratado de Tordesilhas?",
+          "respostas": [
+            "A: Fim da escravidão",
+            "B: Acordo entre Portugal e Espanha",
+            "C: Proclamação da República",
+            "D: Tratado de paz da 1ª Guerra"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual foi a principal causa da Revolução Francesa?",
+          "respostas": [
+            "A: Crise econômica e desigualdade social",
+            "B: Invasão da Inglaterra",
+            "C: Descoberta da América",
+            "D: Queda do Império Romano"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Quem foi o líder do movimento nazista na Alemanha?",
+          "respostas": [
+            "A: Mussolini",
+            "B: Stalin",
+            "C: Adolf Hitler",
+            "D: Winston Churchill"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Em que período ocorreu a Idade Média?",
+          "respostas": [
+            "A: Século V ao XV",
+            "B: Século I ao V",
+            "C: Século XV ao XVIII",
+            "D: Século XVIII ao XX"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual presidente construiu Brasília?",
+          "respostas": [
+            "A: Getúlio Vargas",
+            "B: Juscelino Kubitschek",
+            "C: Jânio Quadros",
+            "D: Tancredo Neves"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "O que era o Feudalismo?",
+          "respostas": [
+            "A: Um sistema democrático",
+            "B: Sistema político-econômico baseado na terra",
+            "C: Uma religião antiga",
+            "D: Uma forma de comércio marítimo"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual foi o estopim da Primeira Guerra Mundial?",
+          "respostas": [
+            "A: Invasão da Polônia",
+            "B: Assassinato do arquiduque Francisco Ferdinando",
+            "C: Queda da Bolsa de NY",
+            "D: Revolução Russa"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Quem foi Zumbi dos Palmares?",
+          "respostas": [
+            "A: Um imperador brasileiro",
+            "B: Um líder quilombola",
+            "C: Um bandeirante",
+            "D: Um padre jesuíta"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual civilização utilizava a escrita hieroglífica?",
+          "respostas": [
+            "A: Romana",
+            "B: Grega",
+            "C: Egípcia",
+            "D: Maia"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "A Guerra Fria foi uma disputa entre quais potências?",
+          "respostas": [
+            "A: Alemanha e Japão",
+            "B: EUA e URSS",
+            "C: França e Inglaterra",
+            "D: Brasil e Argentina"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Quem foi Tiradentes?",
+          "respostas": [
+            "A: Mártir da Inconfidência Mineira",
+            "B: Primeiro presidente",
+            "C: Inventor do avião",
+            "D: Imperador do Brasil"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "O que foi o Renascimento?",
+          "respostas": [
+            "A: Movimento cultural e artístico",
+            "B: Uma guerra religiosa",
+            "C: A queda da monarquia",
+            "D: Descoberta da pólvora"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Em qual país começou a Revolução Industrial?",
+          "respostas": [
+            "A: França",
+            "B: EUA",
+            "C: Inglaterra",
+            "D: Alemanha"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual era a principal atividade econômica do Brasil Colônia inicial?",
+          "respostas": [
+            "A: Ouro",
+            "B: Café",
+            "C: Pau-Brasil",
+            "D: Soja"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
           "pergunta": "Quem foi o primeiro presidente do Brasil após a Proclamação da República?",
           "respostas": [
             "A: Deodoro da Fonseca",
@@ -138,9 +733,1053 @@
             "D: Campos Sales"
           ],
           "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que foi a Conferência de Berlim (1884-1885)?",
+          "respostas": [
+            "A: Fim da escravidão na Europa",
+            "B: Partilha da África entre potências europeias",
+            "C: Tratado de paz da guerra franco-prussiana",
+            "D: Fundação da União Europeia"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual foi o código de leis mais antigo da história?",
+          "respostas": [
+            "A: Código Civil Francês",
+            "B: Código de Hamurábi",
+            "C: Lei das Doze Tábuas",
+            "D: Constituição Americana"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Quem foi o autor de 'O Príncipe'?",
+          "respostas": [
+            "A: Thomas Hobbes",
+            "B: Nicolau Maquiavel",
+            "C: John Locke",
+            "D: Jean-Jacques Rousseau"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que causou o fim da União Soviética em 1991?",
+          "respostas": [
+            "A: Uma invasão dos EUA",
+            "B: Reformas como Glasnost e Perestroika",
+            "C: Uma guerra civil nuclear",
+            "D: A queda de Hitler"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual foi a principal consequência do Tratado de Versalhes?",
+          "respostas": [
+            "A: Unificação da Alemanha",
+            "B: Humilhação e sanções severas à Alemanha",
+            "C: Fim da monarquia russa",
+            "D: Criação da ONU"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Em que ano ocorreu a queda do Muro de Berlim?",
+          "respostas": [
+            "A: 1985",
+            "B: 1987",
+            "C: 1989",
+            "D: 1991"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Quem era o governante da França durante o 'Terror' na Revolução Francesa?",
+          "respostas": [
+            "A: Napoleão Bonaparte",
+            "B: Luís XVI",
+            "C: Maximilien Robespierre",
+            "D: Danton"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que foi a Revolução Meiji no Japão?",
+          "respostas": [
+            "A: Início do isolacionismo",
+            "B: Modernização e ocidentalização acelerada",
+            "C: Derrota na 2ª Guerra",
+            "D: Invasão da China"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual era o objetivo principal da Doutrina Monroe?",
+          "respostas": [
+            "A: Expandir o território americano para a Ásia",
+            "B: Impedir a recolonização europeia nas Américas",
+            "C: Criar uma moeda única",
+            "D: Apoiar a Revolução Russa"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Quem foi a figura central da Reforma Protestante?",
+          "respostas": [
+            "A: Martinho Lutero",
+            "B: Inácio de Loyola",
+            "C: Papa Leão X",
+            "D: Carlos V"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual foi o estopim da Segunda Guerra Mundial em 1939?",
+          "respostas": [
+            "A: Ataque a Pearl Harbor",
+            "B: Invasão da Polônia pela Alemanha",
+            "C: Bombardeio de Hiroshima",
+            "D: Queda da França"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "A Batalha de Waterloo marcou a derrota definitiva de quem?",
+          "respostas": [
+            "A: Júlio César",
+            "B: Alexandre o Grande",
+            "C: Napoleão Bonaparte",
+            "D: Rei George III"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que foi o Apartheid na África do Sul?",
+          "respostas": [
+            "A: Movimento de independência",
+            "B: Sistema oficial de segregação racial",
+            "C: Guerra entre tribos",
+            "D: Aliança comercial"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual era a principal característica da pólis grega de Esparta?",
+          "respostas": [
+            "A: Democracia participativa",
+            "B: Militarismo e educação rígida",
+            "C: Foco exclusivo no comércio marítimo",
+            "D: Ausência de escravidão"
+          ],
+          "correta": "B"
         }
       ]
     },
-    
-  ] 
+    {
+      "area": "Português",
+      "perguntas": [
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o coletivo de 'peixes'?",
+          "respostas": [
+            "A: Alcateia",
+            "B: Cardume",
+            "C: Enxame",
+            "D: Rebanho"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual destas palavras é um substantivo próprio?",
+          "respostas": [
+            "A: cidade",
+            "B: brasil",
+            "C: Brasil",
+            "D: País"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o antônimo de 'alto'?",
+          "respostas": [
+            "A: Comprido",
+            "B: Grande",
+            "C: Baixo",
+            "D: Pequeno"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Quantas sílabas tem a palavra 'paralelepípedo'?",
+          "respostas": [
+            "A: 6",
+            "B: 7",
+            "C: 8",
+            "D: 9"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o plural de 'pão'?",
+          "respostas": [
+            "A: Pãos",
+            "B: Pães",
+            "C: Pãezinhos",
+            "D: Pões"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual o sinal de pontuação usado para indicar uma pergunta?",
+          "respostas": [
+            "A: Ponto final",
+            "B: Vírgula",
+            "C: Ponto de interrogação",
+            "D: Ponto de exclamação"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual destas palavras é um artigo definido feminino?",
+          "respostas": [
+            "A: O",
+            "B: Um",
+            "C: A",
+            "D: Uma"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Complete a frase: '_____ crianças estão brincando'.",
+          "respostas": [
+            "A: O",
+            "B: Os",
+            "C: As",
+            "D: A"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é a primeira letra do alfabeto?",
+          "respostas": [
+            "A: B",
+            "B: Z",
+            "C: A",
+            "D: E"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "O que indica um verbo?",
+          "respostas": [
+            "A: Nome de objetos",
+            "B: Qualidades",
+            "C: Ação ou estado",
+            "D: Lugares"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual é a sílaba tônica da palavra 'café'?",
+          "respostas": [
+            "A: ca",
+            "B: fé",
+            "C: c",
+            "D: f"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "A palavra 'casa' é um substantivo de que tipo?",
+          "respostas": [
+            "A: Próprio",
+            "B: Comum",
+            "C: Abstrato",
+            "D: Coletivo"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual alternativa apresenta apenas palavras oxítonas?",
+          "respostas": [
+            "A: Mesa, cadeira",
+            "B: Sofá, picolé",
+            "C: Lâmpada, médico",
+            "D: Árvore, fácil"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Como se chama o encontro de duas vogais em sílabas diferentes?",
+          "respostas": [
+            "A: Ditongo",
+            "B: Hiato",
+            "C: Tritongo",
+            "D: Dígrafo"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual é o feminino de 'atleta'?",
+          "respostas": [
+            "A: Atletisa",
+            "B: Atletina",
+            "C: A atleta",
+            "D: Atleto"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Indique o adjetivo na frase: 'O gato preto fugiu'.",
+          "respostas": [
+            "A: Gato",
+            "B: Preto",
+            "C: Fugiu",
+            "D: O"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual palavra está escrita corretamente?",
+          "respostas": [
+            "A: Excessão",
+            "B: Exceção",
+            "C: Esceção",
+            "D: Exseção"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "O que são palavras sinônimas?",
+          "respostas": [
+            "A: Palavras com sentidos opostos",
+            "B: Palavras com o mesmo som",
+            "C: Palavras com sentidos semelhantes",
+            "D: Palavras que não têm sentido"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o infinitivo do verbo 'cantamos'?",
+          "respostas": [
+            "A: Canto",
+            "B: Cantar",
+            "C: Cantando",
+            "D: Cantado"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Assinale o pronome pessoal do caso reto:",
+          "respostas": [
+            "A: Meu",
+            "B: Este",
+            "C: Nós",
+            "D: Alguém"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "A palavra 'estudo' em 'Eu estudo muito' é um:",
+          "respostas": [
+            "A: Nome",
+            "B: Adjetivo",
+            "C: Verbo",
+            "D: Advérbio"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o plural de 'girassol'?",
+          "respostas": [
+            "A: Girassols",
+            "B: Girassóis",
+            "C: Girassolzes",
+            "D: Giras-sóis"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Quantas letras e quantos fonemas tem a palavra 'fixo'?",
+          "respostas": [
+            "A: 4 letras, 4 fonemas",
+            "B: 4 letras, 5 fonemas",
+            "C: 5 letras, 4 fonemas",
+            "D: 4 letras, 3 fonemas"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "A palavra 'céu' é um:",
+          "respostas": [
+            "A: Monossílabo",
+            "B: Dissílabo",
+            "C: Trissílabo",
+            "D: Polissílabo"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Indique a alternativa com erro de ortografia:",
+          "respostas": [
+            "A: Viagem (substantivo)",
+            "B: Viajem (verbo)",
+            "C: Analisar",
+            "D: Pesquizar"
+          ],
+          "correta": "D"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual a figura de linguagem presente em 'O jardim sorria para o sol'?",
+          "respostas": [
+            "A: Metáfora",
+            "B: Personificação",
+            "C: Hipérbole",
+            "D: Eufemismo"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Assinale a frase em que o uso da crase é obrigatório:",
+          "respostas": [
+            "A: Vou a casa agora.",
+            "B: Entregue o livro a ela.",
+            "C: Fui a escola pela manhã.",
+            "D: Ele cheira a cigarro."
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual é o sujeito da frase: 'Chegaram os convidados'?",
+          "respostas": [
+            "A: Oculto",
+            "B: Indeterminado",
+            "C: Os convidados",
+            "D: Inexistente"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual é a função sintática de 'um livro' em 'Li um livro'?",
+          "respostas": [
+            "A: Sujeito",
+            "B: Objeto Direto",
+            "C: Objeto Indireto",
+            "D: Predicativo"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual o superlativo absoluto sintético de 'fiel'?",
+          "respostas": [
+            "A: Muito fiel",
+            "B: Fielíssimo",
+            "C: Fidelíssimo",
+            "D: Fielzão"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que é um 'pleonasmo'?",
+          "respostas": [
+            "A: Uma contradição",
+            "B: Uma repetição de ideia",
+            "C: Uma suavização",
+            "D: Uma comparação"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual o tempo verbal de 'Eu amara'?",
+          "respostas": [
+            "A: Pretérito Perfeito",
+            "B: Pretérito Imperfeito",
+            "C: Pretérito Mais-que-perfeito",
+            "D: Futuro do Pretérito"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "A palavra 'embora' é classificada como:",
+          "respostas": [
+            "A: Conjunção",
+            "B: Preposição",
+            "C: Interjeição",
+            "D: Pronome"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual alternativa apresenta um erro de concordância nominal?",
+          "respostas": [
+            "A: Água é bom para a saúde.",
+            "B: A água é boa para a saúde.",
+            "C: É proibido entrada.",
+            "D: As alunas mesmas fizeram o trabalho."
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Indique a oração subordinada integrante:",
+          "respostas": [
+            "A: Desejo que você seja feliz.",
+            "B: O carro que comprei é novo.",
+            "C: Saí quando começou a chover.",
+            "D: Como não estudou, reprovou."
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Em 'Trabalhou-se muito', o 'se' é:",
+          "respostas": [
+            "A: Partícula apassivadora",
+            "B: Índice de indeterminação do sujeito",
+            "C: Objeto direto",
+            "D: Pronome reflexivo"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual o significado da palavra 'epifania'?",
+          "respostas": [
+            "A: Tristeza profunda",
+            "B: Manifestação súbita de compreensão",
+            "C: Ódio reprimido",
+            "D: Ausência de cor"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual o plural de 'decreto-lei'?",
+          "respostas": [
+            "A: Decretos-lei",
+            "B: Decreto-leis",
+            "C: Decretos-leis",
+            "D: Decreto-lei"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual a classe gramatical de 'meio' em 'Ela está meio triste'?",
+          "respostas": [
+            "A: Numeral",
+            "B: Adjetivo",
+            "C: Advérbio",
+            "D: Substantivo"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Assinale a alternativa que contém apenas hiatos:",
+          "respostas": [
+            "A: Saúde, saída, coelho",
+            "B: Caixa, peixe, lei",
+            "C: Uruguai, saguão",
+            "D: Guitarra, foguete"
+          ],
+          "correta": "A"
+        }
+      ]
+    },
+    {
+      "area": "Geografia",
+      "perguntas": [
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o maior país do mundo em território?",
+          "respostas": [
+            "A: Brasil",
+            "B: Estados Unidos",
+            "C: Rússia",
+            "D: China"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é a capital do Brasil?",
+          "respostas": [
+            "A: Rio de Janeiro",
+            "B: São Paulo",
+            "C: Brasília",
+            "D: Salvador"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Em qual continente fica o Brasil?",
+          "respostas": [
+            "A: Europa",
+            "B: África",
+            "C: América",
+            "D: Ásia"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual oceano banha o litoral brasileiro?",
+          "respostas": [
+            "A: Pacífico",
+            "B: Índico",
+            "C: Atlântico",
+            "D: Glacial Ártico"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Quantos estados tem o Brasil?",
+          "respostas": [
+            "A: 25 e o DF",
+            "B: 26 e o DF",
+            "C: 27 e o DF",
+            "D: 24 e o DF"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual o planeta em que vivemos?",
+          "respostas": [
+            "A: Marte",
+            "B: Terra",
+            "C: Júpiter",
+            "D: Vênus"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual o nome da linha imaginária que divide a Terra em Norte e Sul?",
+          "respostas": [
+            "A: Trópico de Câncer",
+            "B: Meridiano de Greenwich",
+            "C: Linha do Equador",
+            "D: Trópico de Capricórnio"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Onde o sol 'nasce'?",
+          "respostas": [
+            "A: Norte",
+            "B: Sul",
+            "C: Leste",
+            "D: Oeste"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o maior oceano do planeta?",
+          "respostas": [
+            "A: Atlântico",
+            "B: Índico",
+            "C: Pacífico",
+            "D: Antártico"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual destas é uma fonte de energia renovável?",
+          "respostas": [
+            "A: Petróleo",
+            "B: Carvão Mineral",
+            "C: Energia Solar",
+            "D: Gás Natural"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual é o ponto mais alto do relevo brasileiro?",
+          "respostas": [
+            "A: Pico da Bandeira",
+            "B: Pico da Neblina",
+            "C: Monte Roraima",
+            "D: Pico das Agulhas Negras"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual país não faz fronteira com o Brasil?",
+          "respostas": [
+            "A: Argentina",
+            "B: Chile",
+            "C: Paraguai",
+            "D: Uruguai"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o maior bioma do Brasil?",
+          "respostas": [
+            "A: Pantanal",
+            "B: Caatinga",
+            "C: Amazônia",
+            "D: Cerrado"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "O que estuda a demografia?",
+          "respostas": [
+            "A: As rochas",
+            "B: O clima",
+            "C: As populações humanas",
+            "D: Os oceanos"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual região brasileira possui o maior número de estados?",
+          "respostas": [
+            "A: Norte",
+            "B: Nordeste",
+            "C: Centro-Oeste",
+            "D: Sul"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Como se chama o movimento da Terra em torno do Sol?",
+          "respostas": [
+            "A: Rotação",
+            "B: Translação",
+            "C: Nutação",
+            "D: Precessão"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Em qual continente localiza-se o Egito?",
+          "respostas": [
+            "A: Ásia",
+            "B: Europa",
+            "C: África",
+            "D: América"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o rio mais extenso do mundo?",
+          "respostas": [
+            "A: Rio Nilo",
+            "B: Rio Amazonas",
+            "C: Rio Mississipi",
+            "D: Rio Yangtzé"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "O que é o fenômeno da urbanização?",
+          "respostas": [
+            "A: Crescimento das florestas",
+            "B: Crescimento das cidades e saída do campo",
+            "C: Aumento da produção agrícola",
+            "D: Poluição dos oceanos"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o maior deserto do mundo?",
+          "respostas": [
+            "A: Saara",
+            "B: Atacama",
+            "C: Gobi",
+            "D: Antártida"
+          ],
+          "correta": "D"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual o principal gás responsável pelo efeito estufa?",
+          "respostas": [
+            "A: Oxigênio",
+            "B: Nitrogênio",
+            "C: Dióxido de Carbono (CO2)",
+            "D: Hélio"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Como se chama a ciência que elabora mapas?",
+          "respostas": [
+            "A: Geologia",
+            "B: Cartografia",
+            "C: Astronomia",
+            "D: Topografia"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "O que é o PIB (Produto Interno Bruto)?",
+          "respostas": [
+            "A: Soma de todas as pessoas",
+            "B: Soma de todas as riquezas de um país",
+            "C: Índice de analfabetismo",
+            "D: Área total do território"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual país é conhecido como o país do sol nascente?",
+          "respostas": [
+            "A: China",
+            "B: Japão",
+            "C: Coreia do Sul",
+            "D: Tailândia"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual montanha é a mais alta do mundo (nível do mar)?",
+          "respostas": [
+            "A: K2",
+            "B: Monte Everest",
+            "C: Kilimanjaro",
+            "D: Aconcágua"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que são as 'curvas de nível' em um mapa cartográfico?",
+          "respostas": [
+            "A: Linhas que unem pontos de mesma altitude",
+            "B: Linhas que dividem países",
+            "C: Rotas de aviões",
+            "D: Profundidade dos oceanos"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual é o principal bioma da região Sul do Brasil?",
+          "respostas": [
+            "A: Cerrado",
+            "B: Pampa",
+            "C: Caatinga",
+            "D: Mata Atlântica"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que caracteriza o clima Equatorial?",
+          "respostas": [
+            "A: Frio intenso e neve",
+            "B: Altas temperaturas e chuvas abundantes",
+            "C: Secas prolongadas",
+            "D: Estações do ano bem definidas"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que é a Litosfera?",
+          "respostas": [
+            "A: Camada de ar",
+            "B: Camada externa sólida da Terra",
+            "C: Porção de água do planeta",
+            "D: O núcleo da Terra"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que significa a sigla IDH?",
+          "respostas": [
+            "A: Índice de Desenvolvimento Humano",
+            "B: Imposto sobre Desenvolvimento Habitacional",
+            "C: Índice de Distribuição Hídrica",
+            "D: Indicador de Dívida Humana"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual é a teoria que explica o movimento dos continentes?",
+          "respostas": [
+            "A: Teoria da Gravidade",
+            "B: Tectônica de Placas",
+            "C: Evolução das Espécies",
+            "D: Big Bang"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que é o fenômeno El Niño?",
+          "respostas": [
+            "A: Resfriamento das águas do Índico",
+            "B: Aquecimento anormal das águas do Pacífico",
+            "C: Terremoto submarino",
+            "D: Furacão no Caribe"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual país europeu possui a maior economia?",
+          "respostas": [
+            "A: França",
+            "B: Reino Unido",
+            "C: Alemanha",
+            "D: Itália"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Onde se localiza o Estreito de Gibraltar?",
+          "respostas": [
+            "A: Entre a América e a Ásia",
+            "B: Entre a Europa e a África",
+            "C: Entre a Oceania e a Antártida",
+            "D: No Canal do Panamá"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que é um 'domínio morfoclimático'?",
+          "respostas": [
+            "A: Apenas o clima de uma região",
+            "B: Integração entre relevo, clima e vegetação",
+            "C: Divisão política de estados",
+            "D: Mapa de densidade demográfica"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual a principal característica da projeção de Mercator?",
+          "respostas": [
+            "A: Preserva as áreas reais",
+            "B: Preserva as formas (ângulos) mas distorce áreas",
+            "C: É uma projeção centrada nos polos",
+            "D: Não apresenta nenhuma distorção"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que é a 'curva demográfica' ou transição demográfica?",
+          "respostas": [
+            "A: Queda da mortalidade seguida pela queda da natalidade",
+            "B: Aumento infinito da população",
+            "C: Migração em massa para outro planeta",
+            "D: Fim das fronteiras nacionais"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual mineral é a base da economia da Arábia Saudita?",
+          "respostas": [
+            "A: Ferro",
+            "B: Ouro",
+            "C: Petróleo",
+            "D: Cobre"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "Qual cidade é considerada uma 'Megacidade' (mais de 10 milhões de hab.)?",
+          "respostas": [
+            "A: Curitiba",
+            "B: Tóquio",
+            "C: Lisboa",
+            "D: Montevidéu"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "difícil",
+          "pergunta": "O que é o 'Ecumeno' em Geografia Humana?",
+          "respostas": [
+            "A: Áreas desabitadas por frio extremo",
+            "B: Áreas permanentemente habitadas pelo homem",
+            "C: Desertos de areia",
+            "D: O fundo dos oceanos"
+          ],
+          "correta": "B"
+        }
+      ]
+    }
+  ]
 }
+
