@@ -1,5 +1,4 @@
-# ================== IMPORTAÇÕES ==================
-
+# IMPORTAÇÕES
 import customtkinter as ctk
 import json
 import random
@@ -12,8 +11,7 @@ from funcoes import (
     valida_senha
 )
 
-# ================== CONFIGURAÇÃO DA JANELA ==================
-
+# CONFIGURAÇÃO DA JANELA
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
@@ -24,30 +22,65 @@ app.geometry("800x600")
 jogador_atual = None
 dinheiro = 0
 
-# ================== FUNÇÃO PARA LIMPAR TELA ==================
-
+# FUNÇÃO PARA LIMPAR TELA
 def limpar_tela():
     for widget in app.winfo_children():
         widget.destroy()
 
-# ================== TELA MENU ==================
-
+# =========================
+# TELA MENU (MODIFICADA)
+# =========================
 def tela_menu():
     limpar_tela()
 
     ctk.CTkLabel(
         app,
         text="SHOW DO MILHÃO",
-        font=("Arial", 30, "bold")
-    ).pack(pady=40)
+        font=("Arial Black", 42),
+        text_color="#ffffff"
+    ).pack(pady=50)
 
-    ctk.CTkButton(app, text="Login", width=200, command=tela_login).pack(pady=10)
-    ctk.CTkButton(app, text="Cadastrar", width=200, command=tela_cadastro).pack(pady=10)
-    ctk.CTkButton(app, text="Ranking", width=200, command=tela_ranking).pack(pady=10)
-    ctk.CTkButton(app, text="Sair", width=200, command=app.destroy).pack(pady=10)
+    ctk.CTkButton(
+        app,
+        text="LOGIN",
+        width=320,
+        height=60,
+        font=("Arial", 20, "bold"),
+        command=tela_login
+    ).pack(pady=15)
 
-# ================== LOGIN ==================
+    ctk.CTkButton(
+        app,
+        text="CADASTRAR",
+        width=320,
+        height=60,
+        font=("Arial", 20, "bold"),
+        command=tela_cadastro
+    ).pack(pady=15)
 
+    ctk.CTkButton(
+        app,
+        text="RANKING",
+        width=320,
+        height=60,
+        font=("Arial", 20, "bold"),
+        command=tela_ranking
+    ).pack(pady=15)
+
+    ctk.CTkButton(
+        app,
+        text="SAIR",
+        width=320,
+        height=60,
+        font=("Arial", 20, "bold"),
+        fg_color="#8b0000",
+        hover_color="#a80000",
+        command=app.destroy
+    ).pack(pady=20)
+
+# =========================
+# LOGIN
+# =========================
 def tela_login():
     limpar_tela()
 
@@ -83,8 +116,9 @@ def tela_login():
     ctk.CTkButton(app, text="Entrar", command=fazer_login).pack(pady=10)
     ctk.CTkButton(app, text="Voltar", command=tela_menu).pack(pady=10)
 
-# ================== CADASTRO ==================
-
+# =========================
+# CADASTRO
+# =========================
 def tela_cadastro():
     limpar_tela()
 
@@ -129,8 +163,9 @@ def tela_cadastro():
     ctk.CTkButton(app, text="Cadastrar", command=cadastrar_usuario).pack(pady=10)
     ctk.CTkButton(app, text="Voltar", command=tela_menu).pack(pady=10)
 
-# ================== RANKING ==================
-
+# =========================
+# RANKING
+# =========================
 def tela_ranking():
     limpar_tela()
 
@@ -150,8 +185,9 @@ def tela_ranking():
 
     ctk.CTkButton(app, text="Voltar", command=tela_menu).pack(pady=20)
 
-# ================== JOGO ==================
-
+# =========================
+# JOGO
+# =========================
 def tela_jogo():
     limpar_tela()
     global dinheiro
@@ -163,7 +199,6 @@ def tela_jogo():
     pergunta = random.choice(area["perguntas"])
     correta = pergunta["correta"]
 
-    # ----- TOPO -----
     topo = ctk.CTkFrame(app)
     topo.pack(fill="x", pady=10)
 
@@ -180,7 +215,6 @@ def tela_jogo():
     )
     saldo_label.pack(side="right", padx=20)
 
-    # ----- CONTEÚDO -----
     conteudo = ctk.CTkFrame(app)
     conteudo.pack(padx=30, pady=20, fill="both", expand=True)
 
@@ -215,28 +249,36 @@ def tela_jogo():
         salvar_progresso(jogador_atual)
         saldo_label.configure(text=f"Saldo: R${dinheiro:.2f}")
 
+    # ===== SUB-OPÇÕES (MODIFICADAS) =====
     for alt in pergunta["respostas"]:
         letra = alt[0]
         ctk.CTkButton(
             conteudo,
             text=alt,
-            width=450,
-            height=40,
-            font=("Arial", 15),
+            width=600,
+            height=65,
+            font=("Arial Black", 20),
+            corner_radius=15,
             command=lambda l=letra: responder(l)
-        ).pack(pady=6)
+        ).pack(pady=10)
 
-    # ----- RODAPÉ -----
     rodape = ctk.CTkFrame(app)
     rodape.pack(pady=15)
 
-    ctk.CTkButton(rodape, text="Próxima pergunta", width=180, command=tela_jogo)\
-        .pack(side="left", padx=10)
+    ctk.CTkButton(
+        rodape,
+        text="Próxima pergunta",
+        width=180,
+        command=tela_jogo
+    ).pack(side="left", padx=10)
 
-    ctk.CTkButton(rodape, text="Parar o jogo", width=180, command=tela_menu)\
-        .pack(side="right", padx=10)
+    ctk.CTkButton(
+        rodape,
+        text="Parar o jogo",
+        width=180,
+        command=tela_menu
+    ).pack(side="right", padx=10)
 
-# ================== INICIAR ==================
-
+# INICIAR
 tela_menu()
 app.mainloop()
