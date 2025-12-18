@@ -1,6 +1,6 @@
 import json
 import random
-from classes import jogador # Importa apenas a classe jogador
+from classes import jogador
 from pathlib import Path
 from time import sleep
 
@@ -109,7 +109,7 @@ def login():
                 return jogador_atual
         embaixo("Nome de usuário ou senha incorretos. Tente novamente.")
 
-#Jogo
+#Funções do jogo
 def ranking():
     with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
         dados = json.load(f)

@@ -30,9 +30,9 @@ while True:
                 if jogador_atual:   
                     break           
                 else:
-                     print("Login inválido. Tente novamente.\n")
+                     print("\033[31mLogin inválido. Tente novamente.\033[m\n")
             else:
-                print("Opção inválida.")
+                enunciado("\033[31mOpção inválida. Tente novamente.\033[m\n")
         enunciado("\033[33mShow do Milhão\033[m".center(45))
         resp = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
         while resp != 3:
@@ -41,9 +41,12 @@ while True:
             if resp == "2":
                 ranking()
                 resp = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
-        else:
-            sleep(1)
-            break
+            if resp == "3":
+                sleep(1)
+                break
+            while resp not in ["1", "2", "3"]:
+                enunciado("\033[31mOpção inválida. Tente novamente.\033[m")
+                resp = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
     else:
         enunciado("\033[31mOpção inválida. Tente novamente.\033[m")
 enunciado(f"Carregando...") 
