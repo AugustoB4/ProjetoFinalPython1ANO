@@ -118,7 +118,7 @@ def ranking():
     sleep(0.5)
     for i, jogador_data in enumerate(jogadores_ordenados, start=1):
         print(f" > {i}. {jogador_data['nome']}", f" Dinheiro: R${jogador_data['dinheiro']:.2f}") 
-        sleep(0.5)
+        sleep(0.2)
     print("-" * 40)
 
 
@@ -138,8 +138,8 @@ def salvar_progresso(jogador_atual):
 
 #Jogo
 def Jogo(jogador_atual):
-    print("Responda às perguntas e acumule pontos!\n","Quanto mais pontos, mais perto do milhão.\n","Boa sorte!")
-    enunciado("Iniciando a competição...")
+    enunciado("Responda às perguntas corretamente e ganhe dinheiro!\nQuanto mais dinheiro, mais perto do milhão.\nBoa sorte!")
+    embaixo("Iniciando a competição...")
     sleep(0.5)
     dinheiro = jogador_atual.saldo
     contPerg = 0

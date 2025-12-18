@@ -15,7 +15,7 @@ while True:
         input("Pressione ENTER para voltar ao menu...")
         continue
     elif escolha == "1":
-        if jogador_atual:
+        if jogador_atual is not None:
             Jogo(jogador_atual)
             continue
         enunciado("Conecte-se ou cadastre-se para jogar!")
@@ -34,19 +34,6 @@ while True:
             else:
                 enunciado("\033[31mOpção inválida. Tente novamente.\033[m\n")
         enunciado("\033[33mShow do Milhão\033[m".center(45))
-        resp = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
-        while resp != 3:
-            if resp == "1":
-                Jogo(jogador_atual)
-            if resp == "2":
-                ranking()
-                resp = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
-            if resp == "3":
-                sleep(1)
-                break
-            while resp not in ["1", "2", "3"]:
-                enunciado("\033[31mOpção inválida. Tente novamente.\033[m")
-                resp = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
     else:
         enunciado("\033[31mOpção inválida. Tente novamente.\033[m")
 enunciado(f"Carregando...") 

@@ -15,6 +15,29 @@
           "correta": "B"
         },
         {
+          "dificuldade" : "facil",
+          "pergunta": "Qual é o valor de π (pi) arredondado para duas casas decimais?",
+          "respostas": [
+            "A: 3,12",
+            "B: 3,14",
+            "C: 3,16",
+            "D: 3,18"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade" : "facil",
+          "pergunta": "Qual é o valor de 2 elevado à potência de 5?",
+          "respostas": [
+            "A: 32",
+            "B: 64",
+            "C: 16",
+            "D: 25"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade" : "médio",
           "pergunta": "Qual é o antecessor do sucessor de 10?",
           "respostas": [
             "A: 8",
@@ -23,6 +46,39 @@
             "D: 11"
           ],
           "correta": "C"
+        },
+        {
+          "dificuldade" : "médio",
+          "pergunta": "Quantos lados tem um octógono?",
+          "respostas": [
+            "A: 7",
+            "B: 8",
+            "C: 9",
+            "D: 10"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade" : "difícil",
+          "pergunta": "Um produto custa R$ 1500,000 e recebe um desconto de 12%. Qual é o preço final?",
+          "respostas": [
+            "A: R$ 1310,00",
+            "B: R$ 1320,00",
+            "C: R$ 180,00",
+            "D: R$ 190,00"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade" : "difícil",
+          "pergunta": "Um triângulo tem base 8 cm e altura 5 cm. Qual é sua área?",
+          "respostas": [
+            "A: 20 cm²",
+            "B: 30 cm²",
+            "C: 40 cm²",
+            "D: 50 cm²"
+          ],
+          "correta": "A"
         }
       ]
     },
@@ -49,8 +105,42 @@
             "D: Princesa Isabel"
           ],
           "correta": "C"
+        },
+        {
+          "dificuldade" : "fácil",
+          "pergunta": "Qual foi o primeiro presidente do Brasil?",
+          "respostas": [
+            "A: Getúlio Vargas",
+            "B: Deodoro da Fonseca",
+            "C: Juscelino Kubitschek",
+            "D: Floriano Peixoto"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade" : "médio",
+          "pergunta": "Em que ano ocorreu a Proclamação da República no Brasil?",
+          "respostas": [
+            "A: 1822",
+            "B: 1888",
+            "C: 1889",
+            "D: 1930"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade" : "difícil",
+          "pergunta": "Quem foi o primeiro presidente do Brasil após a Proclamação da República?",
+          "respostas": [
+            "A: Deodoro da Fonseca",
+            "B: Floriano Peixoto",
+            "C: Prudente de Morais",
+            "D: Campos Sales"
+          ],
+          "correta": "A"
         }
       ]
-    }
-  ]
+    },
+    
+  ] 
 }
