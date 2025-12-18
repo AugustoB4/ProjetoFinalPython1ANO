@@ -44,6 +44,26 @@
             "nome": "sofia",
             "senha": "12345678s",
             "dinheiro": 5000
+        },
+        {
+            "nome": "Cezare",
+            "senha": "uva123456",
+            "dinheiro": 0
+        },
+        {
+            "nome": "Livia",
+            "senha": "AnaMaria12",
+            "dinheiro": 0
+        },
+        {
+            "nome": "Ana",
+            "senha": "Maria1234",
+            "dinheiro": 0
+        },
+        {
+            "nome": "Ana2",
+            "senha": "Maria5463",
+            "dinheiro": 0
         }
     ]
 }

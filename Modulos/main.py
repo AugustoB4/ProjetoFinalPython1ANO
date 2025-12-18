@@ -22,7 +22,7 @@ while True:
         while True:
             escolha = menu2("Cadastrar", "Entrar")
             if escolha == "1":
-                cadastrar()
+                jogador_atual = cadastrar()
                 print("\nCadastro concluído!")
                 break
             elif escolha == "2":

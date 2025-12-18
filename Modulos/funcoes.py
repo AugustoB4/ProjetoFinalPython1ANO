@@ -50,13 +50,13 @@ def menu2(Opc1, Opc2):
 #Usuario
 def valida_senha(senha):
     if len(senha) < 8:
-        print("A senha precisa ter mais de 7 caracteres.")
+        print("\033[31mA senha precisa ter mais de 7 caracteres.\033[m")
         return False
     if not any(c.isalpha() for c in senha):
-        print("A senha precisa ter pelo menos uma letra.")
+        print("\033[31mA senha precisa ter pelo menos uma letra.\033[m")
         return False
     if not any(c.isnumeric() for c in senha):
-        print("A senha precisa ter pelo menos um número.")
+        print("\033[31mA senha precisa ter pelo menos um número.\033[m")
         return False
     return True
 
@@ -93,7 +93,7 @@ def cadastrar():
     for jogador_data in dados["jogadores"]:
         if jogador_data["nome"] == nome and jogador_data["senha"] == senha:
             jogador_atual = jogador(nome, senha, jogador_data["dinheiro"]) 
-            emcima(f"Seja bem-vindo, {nome}!")
+            emcima(f"Seja bem-vindo(a), {nome}!")
             return jogador_atual
 
 def login():
@@ -158,7 +158,7 @@ def Jogo(jogador_atual):
         alternativas = pergunta_data["respostas"]
         correta = pergunta_data["correta"]
 
-        #Esse é o jogo em si
+    #Esse é o jogo em si
         print(f"Tema: {area['area']}")
         print(pergunta_data["pergunta"])
         for alt in alternativas:
@@ -168,7 +168,7 @@ def Jogo(jogador_atual):
             resposta = input("Escolha a alternativa correta (A, B, C, D): ").strip().upper()
             if resposta in ["A", "B", "C", "D"]:
                 break
-            print("Insira uma resposta válida (A, B, C ou D).")
+            enunciado("\033[31mInsira uma resposta válida (A, B, C ou D).\033[m")
 
         if resposta == correta:
             sleep(0.5)
