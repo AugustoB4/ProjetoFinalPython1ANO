@@ -104,11 +104,11 @@
         },
         {
           "dificuldade": "fácil",
-          "pergunta": "Como se representa o número 10 em algarismos romanos?",
+          "pergunta": "Como se representa o número 150 em algarismos romanos?",
           "respostas": [
-            "A: V",
-            "B: X",
-            "C: L",
+            "A: CV",
+            "B: CL",
+            "C: LC",
             "D: XV"
           ],
           "correta": "B"
@@ -126,18 +126,18 @@
         },
         {
           "dificuldade": "médio",
-          "pergunta": "Quantos lados tem um octógono?",
+          "pergunta": "Quantos lados tem um eneógono?",
           "respostas": [
             "A: 7",
             "B: 8",
             "C: 9",
             "D: 10"
           ],
-          "correta": "B"
+          "correta": "C"
         },
         {
           "dificuldade": "médio",
-          "pergunta": "Qual é a soma dos ângulos internos de um triângulo?",
+          "pergunta": "Qual é a soma dos ângulos internos de um triângulo isósceles?",
           "respostas": [
             "A: 90°",
             "B: 180°",
@@ -181,14 +181,14 @@
         },
         {
           "dificuldade": "médio",
-          "pergunta": "Qual é o valor de x na equação 3x = 27?",
+          "pergunta": "Qual é o valor de x na equação 3x = 7x + 36?",
           "respostas": [
-            "A: 7",
+            "A: 10",
             "B: 8",
-            "C: 9",
-            "D: 10"
+            "C: -8",
+            "D: -9"
           ],
-          "correta": "C"
+          "correta": "D"
         },
         {
           "dificuldade": "médio",
