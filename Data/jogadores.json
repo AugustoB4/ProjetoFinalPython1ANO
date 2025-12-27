@@ -28,12 +28,12 @@
         {
             "nome": "Gustavo",
             "senha": "Gugu1999",
-            "dinheiro": 8000
+            "dinheiro": 375.03125
         },
         {
             "nome": "Anthony",
             "senha": "toni41101",
-            "dinheiro": 3000.0
+            "dinheiro": 1500.0
         },
         {
             "nome": "Maria",
@@ -64,6 +64,16 @@
             "nome": "Ana2",
             "senha": "Maria5463",
             "dinheiro": 0
+        },
+        {
+            "nome": "Docinho",
+            "senha": "Docinho01",
+            "dinheiro": 0
+        },
+        {
+            "nome": "teste",
+            "senha": "teste12345",
+            "dinheiro": 1000.0
         }
     ]
 }
