@@ -3,7 +3,6 @@ import json
 import random
 
 Path("Data").mkdir(exist_ok=True)
-Path("Data/jogadores").mkdir(exist_ok=True)
 
 JOGADORES_PATH = "Data/jogadores.json"
 PERGUNTAS_PATH_FACIL = "Data/perguntas/facil.json"
@@ -17,7 +16,4 @@ area = random.choice(dados["conteudo"])
 pergunta_data = random.choice(area["perguntas"])
 alternativas = pergunta_data["respostas"]
 correta = pergunta_data["correta"]
-print(area)
-print(pergunta_data)
-print(alternativas)
-print(correta)
+

@@ -4,11 +4,16 @@ from classes import jogador
 from pathlib import Path
 from time import sleep
 
+#Rotas
 Path("Data").mkdir(exist_ok=True)
-JOGADORES_PATH = "Data/jogadores.json"
-PERGUNTAS_PATH = "Data/perguntas.json"
+Path("Data/jogadores").mkdir(exist_ok=True)
 
-#Detalhes 
+JOGADORES_PATH = "Data/jogadores.json"
+PERGUNTAS_PATH_FACIL = "Data/perguntas/facil.json"
+PERGUNTAS_PATH_MEDIO = "Data/perguntas/medio.json"
+PERGUNTAS_PATH_DIFICIL = "Data/perguntas/dificil.json"
+
+#Detalhes de terminal
 def enunciado(texto):
     print("-" * 40)
     print(texto)
@@ -36,18 +41,17 @@ def menu3(Opc1, Opc2, Opc3):
     sleep(0.2)
     print("3.", Opc3)
     sleep(0.2)
-    escolha = input("Escolha uma opção: ")
-    return escolha
+
 
 def menu2(Opc1, Opc2):
     print("1.", Opc1)
     sleep(0.2)
     print("2.", Opc2)
     sleep(0.2)
-    escolha = input("Escolha uma opção: ")
-    return escolha
 
-#Usuario
+
+
+#Usuario, login e cadastro
 def valida_senha(senha):
     if len(senha) < 8:
         print("\033[31mA senha precisa ter mais de 7 caracteres.\033[m")
@@ -136,6 +140,31 @@ def salvar_progresso(jogador_atual):
             json.dump(dados, f, indent=4, ensure_ascii=False)
             encontrado = True
 
+def escolher_pergunta_facil():
+        with open(PERGUNTAS_PATH_FACIL, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+        area = random.choice(dados["conteudo"]) 
+        pergunta_data = random.choice(area["perguntas"])
+        alternativas = pergunta_data["respostas"]
+        correta = pergunta_data["correta"]
+
+def escolher_pergunta_media():
+        with open(PERGUNTAS_PATH_MEDIO, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+        area = random.choice(dados["conteudo"]) 
+        pergunta_data = random.choice(area["perguntas"])
+        alternativas = pergunta_data["respostas"]
+        correta = pergunta_data["correta"]
+
+def escolher_pergunta_dificil():
+        with open(PERGUNTAS_PATH_DIFICIL, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+        area = random.choice(dados["conteudo"]) 
+        pergunta_data = random.choice(area["perguntas"])
+        alternativas = pergunta_data["respostas"]
+        correta = pergunta_data["correta"]
+
+
 #Jogo
 def Jogo(jogador_atual):
     enunciado("Responda às perguntas corretamente e ganhe dinheiro!\nQuanto mais dinheiro, mais perto do milhão.\nBoa sorte!")
@@ -144,57 +173,16 @@ def Jogo(jogador_atual):
     dinheiro = jogador_atual.saldo
     contPerg = 0
 
-    #Para escolher as perguntas
-    while True:
-        with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f:
-            dados = json.load(f)
-        if not dados["conteudo"]:
-            enunciado("Não há mais perguntas disponíveis!")
-            break
-        area = random.choice(dados["conteudo"])
-        if not area["perguntas"]:
-            continue 
-        pergunta_data = random.choice(area["perguntas"])
-        alternativas = pergunta_data["respostas"]
-        correta = pergunta_data["correta"]
+    #Pontuação
+    PontosPorPergunta = [
+        1000, 2000, 3000, 4000, 5000,
+        10000, 20000, 30000, 40000, 50000,
+        100000, 200000, 300000, 500000, 1000000
+    ]
 
     #Esse é o jogo em si
-        print(f"Tema: {area['area']}")
-        print(pergunta_data["pergunta"])
-        for alt in alternativas:
-            sleep(0.2)
-            print (">", alt)
-        while True:
-            resposta = input("Escolha a alternativa correta (A, B, C, D): ").strip().upper()
-            if resposta in ["A", "B", "C", "D"]:
-                break
-            enunciado("\033[31mInsira uma resposta válida (A, B, C ou D).\033[m")
-
-        if resposta == correta:
-            sleep(0.5)
-            enunciado("\033[32mResposta correta!\033[m")
-            dinheiro += 1000 
-        else:
-            sleep(0.5)
-            enunciado(f"\033[31mResposta incorreta! A resposta correta era {correta}.\033[m")
-            dinheiro = dinheiro / 2 
-        contPerg += 1
-        print(f"Dinheiro atual: R${dinheiro:.2f}")
-        if contPerg == 5:
-            jogador_atual.saldo = dinheiro 
-            salvar_progresso(jogador_atual) 
-            print(f"\nVocê terminou esta rodada com R${jogador_atual.saldo:.2f}")
-            escolha = menu2("Voltar ao menu inicial", "Começar outra partida")
-            if escolha == "1":
-                return 
-            elif escolha == "2":
-                enunciado("Iniciando nova partida...")
-                contPerg = 0
-            else:
-                enunciado("Opção inválida. Voltando ao menu inicial.")
-                return                
-        sleep(1) 
-    jogador_atual.saldo = dinheiro
-    salvar_progresso(jogador_atual)
-    enunciado(f"Fim da competição! Você agora está com R${jogador_atual.saldo:.2f}.")
-    return
+    while True:
+        while contPerg <= 15:
+            while contPerg <= 5:
+                area = escolher_pergunta_facil
+                print(f"O tema é {area}")
