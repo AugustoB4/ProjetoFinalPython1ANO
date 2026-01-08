@@ -1,0 +1,130 @@
+{
+  "conteudo": [
+    {
+      "area": "Matemática",
+      "perguntas": [
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é a raiz quadrada de 9?",
+          "respostas": [
+            "A: 2",
+            "B: 3",
+            "C: 4",
+            "D: 5"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o valor de π (pi) arredondado para duas casas decimais?",
+          "respostas": [
+            "A: 3,12",
+            "B: 3,14",
+            "C: 3,16",
+            "D: 3,18"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o valor de 2 elevado à potência de 5?",
+          "respostas": [
+            "A: 32",
+            "B: 64",
+            "C: 16",
+            "D: 25"
+          ],
+          "correta": "A"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Quanto 64 + 26?",
+          "respostas": [
+            "A: 15",
+            "B: 20",
+            "C: 25",
+            "D: 30"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o resultado de 12 x 4?",
+          "respostas": [
+            "A: 44",
+            "B: 46",
+            "C: 48",
+            "D: 50"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Quantos segundos existem em 5 minutos?",
+          "respostas": [
+            "A: 200",
+            "B: 250",
+            "C: 300",
+            "D: 350"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o valor de x na equação x - 10 = 5?",
+          "respostas": [
+            "A: 5",
+            "B: 10",
+            "C: 15",
+            "D: 20"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é o número par que vem logo após 18?",
+          "respostas": [
+            "A: 19",
+            "B: 20",
+            "C: 21",
+            "D: 22"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Qual é a metade de 150?",
+          "respostas": [
+            "A: 50",
+            "B: 65",
+            "C: 75",
+            "D: 85"
+          ],
+          "correta": "C"
+        },
+        {
+          "dificuldade": "fácil",
+          "pergunta": "Como se representa o número 150 em algarismos romanos?",
+          "respostas": [
+            "A: CV",
+            "B: CL",
+            "C: LC",
+            "D: XV"
+          ],
+          "correta": "B"
+        },
+        {
+          "dificuldade": "médio",
+          "pergunta": "Qual é o antecessor do sucessor de 10?",
+          "respostas": [
+            "A: 8",
+            "B: 9",
+            "C: 10",
+            "D: 11"
+          ],
+          "correta": "C"
+        }
+      ]
+    }
+  ]
+}
