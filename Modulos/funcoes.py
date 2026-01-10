@@ -82,7 +82,7 @@ def cadastrar():
     dados["jogadores"].append({
         "nome": novo_jogador.nome,
         "senha": novo_jogador.senha,
-        "dinheiro": 0,
+        "pontuacao": 0,
     })
     with open(JOGADORES_PATH, "w", encoding="utf-8") as f:
         json.dump(dados, f, indent=4, ensure_ascii=False)
@@ -92,7 +92,7 @@ def cadastrar():
             dados = json.load(f)      
     for jogador_data in dados["jogadores"]:
         if jogador_data["nome"] == nome and jogador_data["senha"] == senha:
-            jogador_atual = jogador(nome, senha, jogador_data["dinheiro"]) 
+            jogador_atual = jogador(nome, senha, jogador_data["pontuacao"]) 
             emcima(f"Seja bem-vindo(a), {nome}!")
             return jogador_atual
 
@@ -104,20 +104,21 @@ def login():
             dados = json.load(f)      
         for jogador_data in dados["jogadores"]:
             if jogador_data["nome"] == nome and jogador_data["senha"] == senha:
-                jogador_atual = jogador(nome, senha, jogador_data["dinheiro"]) 
+                jogador_atual = jogador(nome, senha, jogador_data["pontuacao"]) 
                 emcima(f"Bem-vindo de volta, {nome}!")
                 return jogador_atual
         embaixo("Nome de usuário ou senha incorretos. Tente novamente.")
+
 
 #Funções do jogo
 def ranking():
     with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
         dados = json.load(f)
-    jogadores_ordenados = sorted(dados["jogadores"], key=lambda x: x["dinheiro"], reverse=True)
+    jogadores_ordenados = sorted(dados["jogadores"], key=lambda x: x["pontuacao"], reverse=True)
     enunciado("Ranking dos Jogadores")
     sleep(0.5)
     for i, jogador_data in enumerate(jogadores_ordenados, start=1):
-        print(f" > {i}. {jogador_data['nome']}", f" Dinheiro: R${jogador_data['dinheiro']:.2f}") 
+        print(f" > {i}. {jogador_data['nome']}", f" Pontuação {jogador_data['pontuacao']}") 
         sleep(0.2)
     print("-" * 40)
 
@@ -128,7 +129,7 @@ def salvar_progresso(jogador_atual):
     encontrado = False
     for jog in dados["jogadores"]:
         if jog["nome"] == jogador_atual.nome and jog["senha"] == jogador_atual.senha:
-            jog["dinheiro"] = jogador_atual.saldo 
+            jog["pontuacao"] = jogador_atual.saldo 
             encontrado = True
             break
     if encontrado:
@@ -136,54 +137,88 @@ def salvar_progresso(jogador_atual):
             json.dump(dados, f, indent=4, ensure_ascii=False)
             encontrado = True
 
+'''def escolher_pergunta():
+    with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f:
+        dados = json.load(f)
+    area = random.choice(dados["conteudo"]) 
+    perguntas_usadas = []
+    pergunta_sorteada = random.choice(area["perguntas"])
+    if pergunta_sorteada in perguntas_usadas:
+        pergunta_sorteada = random.choice(area["perguntas"])
+    else:
+        dificuldade = pergunta_sorteada["dificuldade"]
+        alternativas = pergunta_sorteada["respostas"]
+        correta = pergunta_sorteada["correta"]
+        perguntas_usadas.append(pergunta_sorteada)'''
+
 #Jogo
 def Jogo(jogador_atual):
-    enunciado("Responda às perguntas corretamente e ganhe dinheiro!\nQuanto mais dinheiro, mais perto do milhão.\nBoa sorte!")
+    enunciado("Responda às perguntas corretamente e ganhe pontos!\nQuanto mais pontos, maior seu ranking.\nBoa sorte!")
     embaixo("Iniciando a competição...")
     sleep(0.5)
-    dinheiro = jogador_atual.saldo
+    pontuacao = jogador_atual.saldo
     contPerg = 0
-
-    #Para escolher as perguntas
+     
     while True:
+        contPerg += 1
+    #Para escolher as perguntas
         with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f:
             dados = json.load(f)
-        if not dados["conteudo"]:
-            enunciado("Não há mais perguntas disponíveis!")
-            break
-        area = random.choice(dados["conteudo"])
-        if not area["perguntas"]:
-            continue 
-        pergunta_data = random.choice(area["perguntas"])
-        alternativas = pergunta_data["respostas"]
-        correta = pergunta_data["correta"]
-
-    #Esse é o jogo em si
-        print(f"Tema: {area['area']}")
-        print(pergunta_data["pergunta"])
-        for alt in alternativas:
-            sleep(0.2)
-            print (">", alt)
-        while True:
-            resposta = input("Escolha a alternativa correta (A, B, C, D): ").strip().upper()
-            if resposta in ["A", "B", "C", "D"]:
-                break
-            enunciado("\033[31mInsira uma resposta válida (A, B, C ou D).\033[m")
-
-        if resposta == correta:
-            sleep(0.5)
-            enunciado("\033[32mResposta correta!\033[m")
-            dinheiro += 1000 
+        area = random.choice(dados["conteudo"]) 
+        perguntas_usadas = []
+        pergunta_sorteada = random.choice(area["perguntas"])
+        if pergunta_sorteada in perguntas_usadas:
+            pergunta_sorteada = random.choice(area["perguntas"])
         else:
-            sleep(0.5)
-            enunciado(f"\033[31mResposta incorreta! A resposta correta era {correta}.\033[m")
-            dinheiro = dinheiro / 2 
-        contPerg += 1
-        print(f"Dinheiro atual: R${dinheiro:.2f}")
+            dificuldade = pergunta_sorteada["dificuldade"]
+            alternativas = pergunta_sorteada["respostas"]
+            correta = pergunta_sorteada["correta"]
+            perguntas_usadas.append(pergunta_sorteada)
+        
+            '''escolher_pergunta()'''
+
+        #Agora é o jogo em si
+            if dificuldade == "fácil":
+                print(f"Dificuldade: \033[32m{dificuldade}\033[m")
+            elif dificuldade == "médio":
+                print(f"Dificuldade: \033[33m{dificuldade}\033[m")
+            elif dificuldade == "difícil":
+                print(f"Dificuldade: \033[31m{dificuldade}\033[m")
+            
+            print(f"Tema: {area['area']}")
+            print(pergunta_sorteada["pergunta"])
+            for alt in alternativas:
+                sleep(0.2)
+                print (">", alt)
+            while True:
+                resposta = input("Escolha a alternativa correta (A, B, C, D): ").strip().upper()
+                if resposta in ["A", "B", "C", "D"]:
+                    break
+                enunciado("\033[31mInsira uma resposta válida (A, B, C ou D).\033[m")
+
+            if resposta == correta:
+                sleep(0.5)
+                enunciado("\033[32mResposta correta!\033[m")
+                if dificuldade == "fácil":
+                    pontuacao += 10
+                elif dificuldade == "médio":
+                    pontuacao += 50
+                elif dificuldade == "difícil":
+                    pontuacao += 100
+            else:
+                sleep(0.5)
+                enunciado(f"\033[31mResposta incorreta! A resposta correta era {correta}.\033[m")
+                if dificuldade == "fácil":
+                    pontuacao - 20
+                elif dificuldade == "médio":
+                    pontuacao - 40
+                elif dificuldade == "difícil":
+                    pontuacao - 80
+            print(f"Sua pontuação atual: {pontuacao}")
         if contPerg == 5:
-            jogador_atual.saldo = dinheiro 
+            jogador_atual.saldo = pontuacao 
             salvar_progresso(jogador_atual) 
-            print(f"\nVocê terminou esta rodada com R${jogador_atual.saldo:.2f}")
+            print(f"\nVocê terminou esta rodada com {jogador_atual.saldo} pontos!")
             escolha = menu2("Voltar ao menu inicial", "Começar outra partida")
             if escolha == "1":
                 return 
@@ -194,7 +229,7 @@ def Jogo(jogador_atual):
                 enunciado("Opção inválida. Voltando ao menu inicial.")
                 return                
         sleep(1) 
-    jogador_atual.saldo = dinheiro
-    salvar_progresso(jogador_atual)
-    enunciado(f"Fim da competição! Você agora está com R${jogador_atual.saldo:.2f}.")
-    return
+        jogador_atual.saldo = pontuacao
+        salvar_progresso(jogador_atual)
+        enunciado(f"Fim da competição! Você agora está com {jogador_atual.saldo} pontos.")
+        return

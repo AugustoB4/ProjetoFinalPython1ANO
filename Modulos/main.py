@@ -2,7 +2,7 @@ from funcoes import *
 from classes import *
 from time import sleep
 
-enunciado("\033[33mShow do Milhão\033[m".center(45))
+enunciado("\033[33mPerguntas e Respostas\033[m".center(45))
 
 jogador_atual = None
 while True:
@@ -33,9 +33,9 @@ while True:
                      print("\033[31mLogin inválido. Tente novamente.\033[m\n")
             else:
                 enunciado("\033[31mOpção inválida. Tente novamente.\033[m\n")
-        enunciado("\033[33mShow do Milhão\033[m".center(45))
+        enunciado("\033[33mPerguntas e Respostas\033[m".center(45))
     else:
         enunciado("\033[31mOpção inválida. Tente novamente.\033[m")
 enunciado(f"Carregando...") 
 sleep(2) 
-enunciado("Obrigado por jogar o Show do Milhão!\nAté a próxima!")
+enunciado("Obrigado por jogar o Perguntas e Respostas!\nAté a próxima!")

@@ -1,79 +1,39 @@
 {
     "jogadores": [
         {
-            "nome": "Alex",
-            "senha": "Alexian0",
-            "dinheiro": 3000.0
-        },
-        {
             "nome": "sofi",
             "senha": "sofi2009",
-            "dinheiro": 5000
+            "pontuacao": 5000
         },
         {
             "nome": "Cezar",
             "senha": "AugustoB4",
-            "dinheiro": 1750.0
+            "pontuacao": 1910.0
         },
         {
             "nome": "Julia",
             "senha": "xuxa1234",
-            "dinheiro": 0
+            "pontuacao": 0
         },
         {
             "nome": "Nataniel",
             "senha": "desviad0",
-            "dinheiro": 3000.0
+            "pontuacao": 3000.0
         },
         {
             "nome": "Gustavo",
             "senha": "Gugu1999",
-            "dinheiro": 375.03125
+            "pontuacao": 375.03125
         },
         {
             "nome": "Anthony",
             "senha": "toni41101",
-            "dinheiro": 1500.0
+            "pontuacao": 1500.0
         },
         {
-            "nome": "Maria",
-            "senha": "Mari1234",
-            "dinheiro": 0
-        },
-        {
-            "nome": "sofia",
-            "senha": "12345678s",
-            "dinheiro": 5000
-        },
-        {
-            "nome": "Cezare",
-            "senha": "uva123456",
-            "dinheiro": 0
-        },
-        {
-            "nome": "Livia",
-            "senha": "AnaMaria12",
-            "dinheiro": 0
-        },
-        {
-            "nome": "Ana",
-            "senha": "Maria1234",
-            "dinheiro": 0
-        },
-        {
-            "nome": "Ana2",
-            "senha": "Maria5463",
-            "dinheiro": 0
-        },
-        {
-            "nome": "Docinho",
-            "senha": "Docinho01",
-            "dinheiro": 0
-        },
-        {
-            "nome": "teste",
-            "senha": "teste12345",
-            "dinheiro": 1000.0
+            "nome": "Rolim",
+            "senha": "Alessandr0",
+            "pontuacao": 10
         }
     ]
 }
