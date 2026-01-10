@@ -158,16 +158,17 @@ def Jogo(jogador_atual):
     sleep(0.5)
     pontuacao = jogador_atual.saldo
     contPerg = 0
-     
+    perguntas_usadas = []
+    with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+
     while True:
         contPerg += 1
     #Para escolher as perguntas
-        with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f:
-            dados = json.load(f)
+        
         area = random.choice(dados["conteudo"]) 
-        perguntas_usadas = []
         pergunta_sorteada = random.choice(area["perguntas"])
-        if pergunta_sorteada in perguntas_usadas:
+        while pergunta_sorteada in perguntas_usadas:
             pergunta_sorteada = random.choice(area["perguntas"])
         else:
             dificuldade = pergunta_sorteada["dificuldade"]
@@ -209,16 +210,17 @@ def Jogo(jogador_atual):
                 sleep(0.5)
                 enunciado(f"\033[31mResposta incorreta! A resposta correta era {correta}.\033[m")
                 if dificuldade == "fácil":
-                    pontuacao - 20
+                    pontuacao -= 5
                 elif dificuldade == "médio":
-                    pontuacao - 40
+                    pontuacao -= 30
                 elif dificuldade == "difícil":
-                    pontuacao - 80
+                    pontuacao -= 80
             print(f"Sua pontuação atual: {pontuacao}")
+            print("-" * 40)
         if contPerg == 5:
             jogador_atual.saldo = pontuacao 
             salvar_progresso(jogador_atual) 
-            print(f"\nVocê terminou esta rodada com {jogador_atual.saldo} pontos!")
+            enunciado(f"\nVocê terminou esta rodada com {jogador_atual.saldo} pontos!")
             escolha = menu2("Voltar ao menu inicial", "Começar outra partida")
             if escolha == "1":
                 return 
@@ -228,8 +230,8 @@ def Jogo(jogador_atual):
             else:
                 enunciado("Opção inválida. Voltando ao menu inicial.")
                 return                
-        sleep(1) 
-        jogador_atual.saldo = pontuacao
-        salvar_progresso(jogador_atual)
-        enunciado(f"Fim da competição! Você agora está com {jogador_atual.saldo} pontos.")
-        return
+            sleep(1) 
+            jogador_atual.saldo = pontuacao
+            salvar_progresso(jogador_atual)
+            enunciado(f"Fim da competição! Você agora está com {jogador_atual.saldo} pontos.")
+            return

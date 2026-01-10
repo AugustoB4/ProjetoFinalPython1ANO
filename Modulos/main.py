@@ -13,6 +13,7 @@ while True:
     elif escolha == "2":
         ranking()
         input("Pressione ENTER para voltar ao menu...")
+        print("-" * 40)
         continue
     elif escolha == "1":
         if jogador_atual is not None:
