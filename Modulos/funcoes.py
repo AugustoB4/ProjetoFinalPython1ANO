@@ -203,35 +203,48 @@ def Jogo(jogador_atual):
                 if dificuldade == "fácil":
                     pontuacao += 10
                 elif dificuldade == "médio":
-                    pontuacao += 50
+                    pontuacao += 25
                 elif dificuldade == "difícil":
-                    pontuacao += 100
+                    pontuacao += 50
             else:
                 sleep(0.5)
                 enunciado(f"\033[31mResposta incorreta! A resposta correta era {correta}.\033[m")
                 if dificuldade == "fácil":
-                    pontuacao -= 5
+                    if pontuacao > 10:
+                        pontuacao -= 10
+                    else:
+                        pontuacao -= (pontuacao * 0.5)
                 elif dificuldade == "médio":
-                    pontuacao -= 30
+                    if pontuacao > 15:
+                        pontuacao -= 15
+                    else:
+                        pontuacao -= (pontuacao * 0.5)
                 elif dificuldade == "difícil":
-                    pontuacao -= 80
+                    if pontuacao > 30:
+                        pontuacao -= 30
+                    else:
+                        pontuacao -= (pontuacao * 0.5)
+                elif pontuacao < 1:
+                    pontuacao = 1
             print(f"Sua pontuação atual: {pontuacao}")
             print("-" * 40)
         if contPerg == 5:
             jogador_atual.saldo = pontuacao 
             salvar_progresso(jogador_atual) 
             enunciado(f"\nVocê terminou esta rodada com {jogador_atual.saldo} pontos!")
-            escolha = menu2("Voltar ao menu inicial", "Começar outra partida")
-            if escolha == "1":
-                return 
-            elif escolha == "2":
-                enunciado("Iniciando nova partida...")
-                contPerg = 0
-            else:
-                enunciado("Opção inválida. Voltando ao menu inicial.")
-                return                
-            sleep(1) 
-            jogador_atual.saldo = pontuacao
-            salvar_progresso(jogador_atual)
-            enunciado(f"Fim da competição! Você agora está com {jogador_atual.saldo} pontos.")
-            return
+            escolha = None
+            while escolha not in ["1", "2"]:
+                escolha = menu2("Voltar ao menu inicial", "Começar outra partida")
+                if escolha == "1":
+                    print("-" * 40)
+                    return 
+                elif escolha == "2":
+                    enunciado("Iniciando nova partida...")
+                    sleep(1)
+                    contPerg = 0
+                    perguntas_usadas.clear()
+                    continue
+                elif escolha not in ["1", "2"]:
+                    enunciado("Opção inválida. ")
+            
+                          

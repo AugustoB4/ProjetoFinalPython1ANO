@@ -1,39 +1,19 @@
 {
     "jogadores": [
         {
-            "nome": "sofi",
-            "senha": "sofi2009",
-            "pontuacao": 5000
+            "nome": "Teste",
+            "senha": "teste02",
+            "pontuacao": 0
         },
         {
             "nome": "Cezar",
             "senha": "AugustoB4",
-            "pontuacao": 1960.0
-        },
-        {
-            "nome": "Julia",
-            "senha": "xuxa1234",
-            "pontuacao": 0
-        },
-        {
-            "nome": "Nataniel",
-            "senha": "desviad0",
-            "pontuacao": 3000.0
-        },
-        {
-            "nome": "Gustavo",
-            "senha": "Gugu1999",
-            "pontuacao": 375.03125
+            "pontuacao": 0.009765625
         },
         {
             "nome": "Anthony",
-            "senha": "toni41101",
-            "pontuacao": 1500.0
-        },
-        {
-            "nome": "Rolim",
-            "senha": "Alessandr0",
-            "pontuacao": 10
+            "senha": "Gabryel1",
+            "pontuacao": 1.25
         }
     ]
 }
