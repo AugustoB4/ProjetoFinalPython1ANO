@@ -8,12 +8,17 @@
         {
             "nome": "Cezar",
             "senha": "AugustoB4",
-            "pontuacao": 0.009765625
+            "pontuacao": 0
         },
         {
             "nome": "Anthony",
             "senha": "Gabryel1",
-            "pontuacao": 1.25
+            "pontuacao": 1
+        },
+        {
+            "nome": "Gustavo",
+            "senha": "Medeiros01",
+            "pontuacao": 140
         }
     ]
 }
