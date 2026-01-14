@@ -118,7 +118,7 @@ def ranking():
     enunciado("Ranking dos Jogadores")
     sleep(0.5)
     for i, jogador_data in enumerate(jogadores_ordenados, start=1):
-        print(f" > {i}. {jogador_data['nome']}", f" Pontuação {jogador_data['pontuacao']}") 
+        print(f" > {i}. {jogador_data['nome']}", f" Pontuação {jogador_data['pontuacao']:.0f}") 
         sleep(0.2)
     print("-" * 40)
 
@@ -232,12 +232,22 @@ def Jogo(jogador_atual):
                         pontuacao -= (pontuacao * 0.5)
                 elif pontuacao < 1:
                     pontuacao = 1
-            print(f"Sua pontuação atual: {pontuacao}")
+            print(f"Sua pontuação atual: {pontuacao:.0f}")
             print("-" * 40)
         if contPerg == 5:
             jogador_atual.saldo = pontuacao 
             salvar_progresso(jogador_atual) 
-            enunciado(f"\nVocê terminou esta rodada com {jogador_atual.saldo} pontos! Sendo {acertos} perguntas acertadas e {erros} erradas.")
+            print(f"Você terminou esta rodada com {jogador_atual.saldo:.0f} pontos!")
+            if acertos > 1:
+                print(f"Sendo {acertos} acertos.")
+            if acertos == 1:
+                print(f"Sendo {acertos} acerto.")
+            if erros > 1:
+                print(f"E {erros} erradas.")
+            if erros == 1:
+                print(f"E {erros} errada.")
+            print("-" * 40)
+
             escolha = None
             while escolha not in ["1", "2"]:
                 escolha = menu2("Voltar ao menu inicial", "Começar outra partida")
