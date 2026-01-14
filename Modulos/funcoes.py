@@ -156,8 +156,12 @@ def Jogo(jogador_atual):
     enunciado("Responda às perguntas corretamente e ganhe pontos!\nQuanto mais pontos, maior seu ranking.\nBoa sorte!")
     embaixo("Iniciando a competição...")
     sleep(0.5)
+
+    #Controle
     pontuacao = jogador_atual.saldo
     contPerg = 0
+    acertos = 0
+    erros = 0
     perguntas_usadas = []
     with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f:
             dados = json.load(f)
@@ -198,6 +202,7 @@ def Jogo(jogador_atual):
                 enunciado("\033[31mInsira uma resposta válida (A, B, C ou D).\033[m")
 
             if resposta == correta:
+                acertos += 1
                 sleep(0.5)
                 enunciado("\033[32mResposta correta!\033[m")
                 if dificuldade == "fácil":
@@ -207,8 +212,9 @@ def Jogo(jogador_atual):
                 elif dificuldade == "difícil":
                     pontuacao += 50
             else:
+                erros += 1
                 sleep(0.5)
-                enunciado(f"\033[31mResposta incorreta! A resposta correta era {correta}.\033[m")
+                enunciado(f"\033[31mResposta incorreta! A resposta correta era {correta}. \033[m")
                 if dificuldade == "fácil":
                     if pontuacao > 10:
                         pontuacao -= 10
@@ -231,7 +237,7 @@ def Jogo(jogador_atual):
         if contPerg == 5:
             jogador_atual.saldo = pontuacao 
             salvar_progresso(jogador_atual) 
-            enunciado(f"\nVocê terminou esta rodada com {jogador_atual.saldo} pontos!")
+            enunciado(f"\nVocê terminou esta rodada com {jogador_atual.saldo} pontos! Sendo {acertos} perguntas acertadas e {erros} erradas.")
             escolha = None
             while escolha not in ["1", "2"]:
                 escolha = menu2("Voltar ao menu inicial", "Começar outra partida")
