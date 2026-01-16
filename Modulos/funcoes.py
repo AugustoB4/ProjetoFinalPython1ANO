@@ -154,10 +154,20 @@ def salvar_progresso(jogador_atual):
 #Jogo
 def Jogo(jogador_atual):
     enunciado("\033[36mSeleção\033[m".center(44))
-    QuanPerg = int(input("Quantas perguntas deseja responder? [MIN:5 / MAX:20] "))
-    if QuanPerg not in [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]:
-        enunciado("\033[31mSelecione uma opção válida.\033[m")
-        QuanPerg = int(input("Quantas perguntas deseja responder? [MIN:5 / MAX:20] "))
+    QuanPerg = 0
+
+    #Seleção da quantidade de perguntas
+    while True:
+        QuanPerg = input("Quantas perguntas deseja responder? [MIN:5 / MAX:20] ")
+        if not QuanPerg.isdigit():
+            enunciado("\033[31mInsira um número válido.\033[m")
+            continue
+        QuanPerg = int(QuanPerg)
+        if 5 <= QuanPerg <= 20:
+            break
+        else:
+            enunciado("\033[31mEscolha um número entre 5 e 20.\033[m")
+
     emcima("Processando...")
     sleep(0.5)
     enunciado("Responda às perguntas corretamente e ganhe pontos!\nQuanto mais pontos, maior seu ranking.\nBoa sorte!")
