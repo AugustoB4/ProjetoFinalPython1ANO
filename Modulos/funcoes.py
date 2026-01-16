@@ -50,13 +50,13 @@ def menu2(Opc1, Opc2):
 #Usuario
 def valida_senha(senha):
     if len(senha) < 8:
-        print("\033[31mA senha precisa ter mais de 7 caracteres.\033[m")
+        enunciado("\033[31mA senha precisa ter mais de 7 caracteres.\033[m")
         return False
     if not any(c.isalpha() for c in senha):
-        print("\033[31mA senha precisa ter pelo menos uma letra.\033[m")
+        enunciado("\033[31mA senha precisa ter pelo menos uma letra.\033[m")
         return False
     if not any(c.isnumeric() for c in senha):
-        print("\033[31mA senha precisa ter pelo menos um número.\033[m")
+        enunciado("\033[31mA senha precisa ter pelo menos um número.\033[m")
         return False
     return True
 
@@ -71,7 +71,7 @@ def cadastrar():
                 nome_existente = True
                 break
         if nome_existente:
-            print("Nome de Usuário já existente! Escolha outro.")
+            enunciado("\033[32mNome de Usuário já existente! Escolha outro.\033[m")
         else:
             break
     while True:
@@ -107,7 +107,7 @@ def login():
                 jogador_atual = jogador(nome, senha, jogador_data["pontuacao"]) 
                 emcima(f"Bem-vindo de volta, {nome}!")
                 return jogador_atual
-        embaixo("Nome de usuário ou senha incorretos. Tente novamente.")
+        enunciado("\033[31mNome de usuário ou senha incorretos. Tente novamente.\033[m")
 
 
 #Funções do jogo
@@ -115,7 +115,7 @@ def ranking():
     with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
         dados = json.load(f)
     jogadores_ordenados = sorted(dados["jogadores"], key=lambda x: x["pontuacao"], reverse=True)
-    enunciado("Ranking dos Jogadores")
+    enunciado("\033[34mRanking dos Jogadores\033[m".center(46))
     sleep(0.5)
     for i, jogador_data in enumerate(jogadores_ordenados, start=1):
         print(f" > {i}. {jogador_data['nome']}", f" Pontuação {jogador_data['pontuacao']:.0f}") 
@@ -153,9 +153,18 @@ def salvar_progresso(jogador_atual):
 
 #Jogo
 def Jogo(jogador_atual):
-    enunciado("Responda às perguntas corretamente e ganhe pontos!\nQuanto mais pontos, maior seu ranking.\nBoa sorte!")
-    embaixo("Iniciando a competição...")
+    enunciado("\033[36mSeleção\033[m".center(44))
+    QuanPerg = int(input("Quantas perguntas deseja responder? [MIN:5 / MAX:20] "))
+    if QuanPerg not in [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]:
+        enunciado("\033[31mSelecione uma opção válida.\033[m")
+        QuanPerg = int(input("Quantas perguntas deseja responder? [MIN:5 / MAX:20] "))
+    emcima("Processando...")
     sleep(0.5)
+    enunciado("Responda às perguntas corretamente e ganhe pontos!\nQuanto mais pontos, maior seu ranking.\nBoa sorte!")
+    sleep(0.5)
+    embaixo("Iniciando a competição...")
+    sleep(1)
+    
 
     #Controle
     pontuacao = jogador_atual.saldo
@@ -214,7 +223,7 @@ def Jogo(jogador_atual):
             else:
                 erros += 1
                 sleep(0.5)
-                enunciado(f"\033[31mResposta incorreta! A resposta correta era {correta}. \033[m")
+                enunciado(f"\033[31mResposta incorreta!\033[m A resposta correta era \033[32m{correta}\033[m. ")
                 if dificuldade == "fácil":
                     if pontuacao > 10:
                         pontuacao -= 10
@@ -232,20 +241,30 @@ def Jogo(jogador_atual):
                         pontuacao -= (pontuacao * 0.5)
                 elif pontuacao < 1:
                     pontuacao = 1
-            print(f"Sua pontuação atual: {pontuacao:.0f}")
+            print(f"Sua pontuação atual: \033[4m{pontuacao:.0f}\033[m")
             print("-" * 40)
-        if contPerg == 5:
+            if QuanPerg == QuanPerg // 2:
+                while escolha not in ["1", "2"]:
+                    escolha = menu2("Continuar a competição", "Desistir")
+                    if escolha == "1":
+                        continue
+                    elif escolha == "2":
+                        break
+                    elif escolha not in ["1", "2"]:
+                        print("\033[31mSelecione uma opção válida\033[m")
+        if contPerg == QuanPerg:
             jogador_atual.saldo = pontuacao 
             salvar_progresso(jogador_atual) 
-            print(f"Você terminou esta rodada com {jogador_atual.saldo:.0f} pontos!")
+            print(f"Você terminou esta rodada com \033[4m{jogador_atual.saldo:.0f}\033[m pontos!")
+            print("Com um total de:")
             if acertos > 1:
-                print(f"Sendo {acertos} acertos.")
+                print(f"-> \033[32m{acertos}\033[m acertos;")
             if acertos == 1:
-                print(f"Sendo {acertos} acerto.")
+                print(f"-> \033[32m{acertos}\033[m acerto;")
             if erros > 1:
-                print(f"E {erros} erradas.")
+                print(f"-> \033[31m{erros}\033[m erros.")
             if erros == 1:
-                print(f"E {erros} errada.")
+                print(f"-> \033[31m{erros}\033[m erro.")
             print("-" * 40)
 
             escolha = None
@@ -261,6 +280,6 @@ def Jogo(jogador_atual):
                     perguntas_usadas.clear()
                     continue
                 elif escolha not in ["1", "2"]:
-                    enunciado("Opção inválida. ")
+                    enunciado("\033[31mOpção inválida.\033[m")
             
                           

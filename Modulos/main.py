@@ -19,9 +19,10 @@ while True:
         if jogador_atual is not None:
             Jogo(jogador_atual)
             continue
-        enunciado("Conecte-se ou cadastre-se para jogar!")
+        enunciado("\033[35mConecte-se ou cadastre-se para jogar!\033[m".center(48))
         while True:
             escolha = menu2("Cadastrar", "Entrar")
+            print("-" * 40)
             if escolha == "1":
                 jogador_atual = cadastrar()
                 print("\nCadastro concluído!")
@@ -39,4 +40,4 @@ while True:
         enunciado("\033[31mOpção inválida. Tente novamente.\033[m")
 enunciado(f"Carregando...") 
 sleep(2) 
-enunciado("Obrigado por jogar o Perguntas e Respostas!\nAté a próxima!")
+embaixo("Obrigado por jogar o \033[33mPerguntas e Respostas!\033[m\nAté a próxima!")
