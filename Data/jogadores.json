@@ -24,6 +24,11 @@
             "nome": "Nataniel",
             "senha": "cantoleir0",
             "pontuacao": 160.0
+        },
+        {
+            "nome": "Sofia",
+            "senha": "Sabin444",
+            "pontuacao": 0
         }
     ]
 }
