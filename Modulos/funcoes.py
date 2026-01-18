@@ -118,12 +118,21 @@ def ranking(jogador_atual=None):
     enunciado("\033[34mRanking dos Jogadores\033[m".center(46))
     sleep(0.5)
     for i, jogador_data in enumerate(jogadores_ordenados, start=1):
-        if jogador_data == jogador_atual:
+        if i == 1:
+            print("\033[33m    < Primeiro Lugar >\033[m")
+            sleep(0.2)
+        if i  == 2:
+            print("\033[33m    < Segundo Lugar >\033[m")
+            sleep(0.2)
+        if i == 3:
+            print("\033[33m    < Terceiro Lugar >\033[m")
+            sleep(0.2)
+        if jogador_atual and jogador_data["nome"] == jogador_atual.nome:
             print(f" > {i}. {jogador_data['nome']}", f" Pontuação {jogador_data['pontuacao']:.0f} \033[32m<- Você\033[m")
         else:
             print(f" > {i}. {jogador_data['nome']}", f" Pontuação {jogador_data['pontuacao']:.0f}") 
         sleep(0.2)
-    print("-" * 40)
+        print()
     
 
 

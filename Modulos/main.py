@@ -14,8 +14,7 @@ while True:
         sleep(1)
         break
     elif escolha == "2":
-        ranking()
-        input("Pressione ENTER para voltar ao menu...")
+        ranking(jogador_atual)
         print("-" * 40)
         continue
     elif escolha == "1":
