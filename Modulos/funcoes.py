@@ -111,16 +111,20 @@ def login():
 
 
 #Funções do jogo
-def ranking():
+def ranking(jogador_atual=None):
     with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
         dados = json.load(f)
     jogadores_ordenados = sorted(dados["jogadores"], key=lambda x: x["pontuacao"], reverse=True)
     enunciado("\033[34mRanking dos Jogadores\033[m".center(46))
     sleep(0.5)
     for i, jogador_data in enumerate(jogadores_ordenados, start=1):
-        print(f" > {i}. {jogador_data['nome']}", f" Pontuação {jogador_data['pontuacao']:.0f}") 
+        if jogador_data == jogador_atual:
+            print(f" > {i}. {jogador_data['nome']}", f" Pontuação {jogador_data['pontuacao']:.0f} \033[32m<- Você\033[m")
+        else:
+            print(f" > {i}. {jogador_data['nome']}", f" Pontuação {jogador_data['pontuacao']:.0f}") 
         sleep(0.2)
     print("-" * 40)
+    
 
 
 def salvar_progresso(jogador_atual):

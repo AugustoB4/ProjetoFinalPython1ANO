@@ -6,7 +6,10 @@ enunciado("\033[33mPerguntas e Respostas\033[m".center(45))
 
 jogador_atual = None
 while True:
-    escolha = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
+    if jogador_atual == None:
+        escolha = menu3("Entrar na competição", "Ver Ranking", "Sair do jogo")
+    else:
+        escolha = menu3("Começar a competição", "Sua posição no ranking", "Sair do Jogo")
     if escolha == "3":
         sleep(1)
         break
