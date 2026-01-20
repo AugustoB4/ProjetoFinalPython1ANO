@@ -42,4 +42,4 @@ while True:
         enunciado("\033[31mOpção inválida. Tente novamente.\033[m")
 enunciado(f"Carregando...") 
 sleep(2) 
-embaixo("Obrigado por jogar \033[33mPerguntas e Respostas!\033[m\nAté a próxima!")
+embaixo("Obrigado por jogar 1\033[33mPerguntas e Respostas!\033[m\nAté a próxima!")

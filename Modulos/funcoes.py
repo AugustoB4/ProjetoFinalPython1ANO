@@ -171,7 +171,7 @@ def Jogo(jogador_atual):
 
     #Seleção da quantidade de perguntas
     while True:
-        QuanPerg = input("Quantas perguntas deseja responder? [MIN:5 / MAX:20] ")
+        QuanPerg = input("Quantas perguntas deseja responder? [\033[32mMIN:5\033[m / \033[31mMAX:20\033[m]: ").strip()
         if not QuanPerg.isdigit():
             enunciado("\033[31mInsira um número válido.\033[m")
             continue
