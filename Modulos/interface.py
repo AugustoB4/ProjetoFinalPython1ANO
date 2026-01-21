@@ -17,260 +17,182 @@ ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
 app = ctk.CTk()
-app.title("Show do Milhão")
-app.geometry("900x700")
+app.title("Master of Knowledge")
+app.geometry("900x750")
 
 jogador_atual = None
-dinheiro = 0
+pontuacao_total = 0 
 
+COR_DOURADO = "#D4AF37"
+COR_FUNDO_PAINEL = "#1e293b"
+COR_BOTAO_PADRAO = "#3b82f6"
 
-# ======================
-# FUNÇÃO LIMPAR TELA
-# ======================
+# Cores nítidas para feedback (Verde e Vermelho vivos)
+VERDE_OK = "#22c55e"   
+VERMELHO_ERRO = "#ef4444" 
+
 def limpar_tela():
     for widget in app.winfo_children():
         widget.destroy()
 
-
 # ======================
-# TELA MENU
+# TELAS DE ACESSO
 # ======================
 def tela_menu():
     limpar_tela()
+    container = ctk.CTkFrame(app, corner_radius=25, fg_color="transparent")
+    container.pack(expand=True)
+    ctk.CTkLabel(container, text="MASTER OF\nKNOWLEDGE", font=("Georgia", 52, "bold"), text_color=COR_DOURADO).pack(pady=(0, 40))
+    for t, c in [("LOGIN", tela_login), ("CADASTRO", tela_cadastro), ("RANKING", tela_ranking)]:
+        ctk.CTkButton(container, text=t, width=320, height=55, font=("Arial", 18, "bold"), command=c).pack(pady=10)
+    ctk.CTkButton(container, text="SAIR", width=320, height=55, fg_color="#7f1d1d", command=app.destroy).pack(pady=30)
 
-    container = ctk.CTkFrame(app, corner_radius=20)
-    container.pack(expand=True, padx=60, pady=60)
-
-    ctk.CTkLabel(
-        container,
-        text="SHOW DO MILHÃO",
-        font=("Arial Black", 42)
-    ).pack(pady=40)
-
-    for texto, comando in [
-        ("LOGIN", tela_login),
-        ("CADASTRAR", tela_cadastro),
-        ("RANKING", tela_ranking)
-    ]:
-        ctk.CTkButton(
-            container,
-            text=texto,
-            width=320,
-            height=60,
-            font=("Arial", 20, "bold"),
-            corner_radius=15,
-            command=comando
-        ).pack(pady=12)
-
-    ctk.CTkButton(
-        container,
-        text="SAIR",
-        width=320,
-        height=60,
-        font=("Arial", 20, "bold"),
-        fg_color="#8b0000",
-        hover_color="#a80000",
-        corner_radius=15,
-        command=app.destroy
-    ).pack(pady=30)
-
-
-# ======================
-# LOGIN
-# ======================
 def tela_login():
     limpar_tela()
-
-    card = ctk.CTkFrame(app, corner_radius=20)
+    card = ctk.CTkFrame(app, corner_radius=20, fg_color=COR_FUNDO_PAINEL)
     card.pack(expand=True, padx=80, pady=80)
-
-    ctk.CTkLabel(card, text="Login", font=("Arial Black", 28)).pack(pady=20)
-
+    ctk.CTkLabel(card, text="Acesso ao Sistema", font=("Arial Black", 26), text_color=COR_DOURADO).pack(pady=25)
     entrada_nome = ctk.CTkEntry(card, placeholder_text="Usuário", width=300)
     entrada_nome.pack(pady=10)
-
     entrada_senha = ctk.CTkEntry(card, placeholder_text="Senha", show="*", width=300)
     entrada_senha.pack(pady=10)
+    
+    def realizar_login():
+        global jogador_atual, pontuacao_total
+        try:
+            with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
+                dados = json.load(f)
+            for j in dados["jogadores"]:
+                if j["nome"] == entrada_nome.get() and j["senha"] == entrada_senha.get():
+                    jogador_atual = jogador(j["nome"], j["senha"], j.get("pontuacao", 0))
+                    pontuacao_total = jogador_atual.saldo # Pega a pontuação salva
+                    tela_jogo()
+                    return
+        except: pass
+    ctk.CTkButton(card, text="Entrar", command=realizar_login).pack(pady=10)
+    ctk.CTkButton(card, text="Voltar", fg_color="transparent", border_width=1, command=tela_menu).pack()
 
-    aviso = ctk.CTkLabel(card, text="")
-    aviso.pack(pady=10)
-
-    def fazer_login():
-        global jogador_atual, dinheiro
-
-        with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
-            dados = json.load(f)
-
-        for j in dados["jogadores"]:
-            if j["nome"] == entrada_nome.get() and j["senha"] == entrada_senha.get():
-                jogador_atual = jogador(j["nome"], j["senha"], j["dinheiro"])
-                dinheiro = jogador_atual.saldo
-                tela_jogo()
-                return
-
-        aviso.configure(text="Usuário ou senha incorretos")
-
-    ctk.CTkButton(card, text="Entrar", width=200, command=fazer_login).pack(pady=10)
-    ctk.CTkButton(card, text="Voltar", width=200, command=tela_menu).pack(pady=10)
-
-
-# ======================
-# CADASTRO
-# ======================
 def tela_cadastro():
     limpar_tela()
-
-    card = ctk.CTkFrame(app, corner_radius=20)
+    card = ctk.CTkFrame(app, corner_radius=20, fg_color=COR_FUNDO_PAINEL)
     card.pack(expand=True, padx=80, pady=80)
-
-    ctk.CTkLabel(card, text="Cadastro", font=("Arial Black", 28)).pack(pady=20)
-
+    ctk.CTkLabel(card, text="Novo Usuário", font=("Arial Black", 26), text_color=COR_DOURADO).pack(pady=25)
     entrada_nome = ctk.CTkEntry(card, placeholder_text="Usuário", width=300)
     entrada_nome.pack(pady=10)
-
     entrada_senha = ctk.CTkEntry(card, placeholder_text="Senha", width=300)
     entrada_senha.pack(pady=10)
-
-    aviso = ctk.CTkLabel(card, text="")
-    aviso.pack(pady=10)
-
-    def cadastrar_usuario():
-        if not valida_senha(entrada_senha.get()):
-            aviso.configure(text="Senha inválida (mín. 8, letra e número)")
-            return
-
-        with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
-            dados = json.load(f)
-
-        for j in dados["jogadores"]:
-            if j["nome"] == entrada_nome.get():
-                aviso.configure(text="Usuário já existe")
-                return
-
-        dados["jogadores"].append({
-            "nome": entrada_nome.get(),
-            "senha": entrada_senha.get(),
-            "dinheiro": 0
-        })
-
-        with open(JOGADORES_PATH, "w", encoding="utf-8") as f:
-            json.dump(dados, f, indent=4, ensure_ascii=False)
-
-        aviso.configure(text="Cadastro realizado com sucesso!")
-
-    ctk.CTkButton(card, text="Cadastrar", width=200, command=cadastrar_usuario).pack(pady=10)
-    ctk.CTkButton(card, text="Voltar", width=200, command=tela_menu).pack(pady=10)
-
+    
+    def salvar():
+        with open(JOGADORES_PATH, "r", encoding="utf-8") as f: dados = json.load(f)
+        dados["jogadores"].append({"nome": entrada_nome.get(), "senha": entrada_senha.get(), "pontuacao": 0})
+        with open(JOGADORES_PATH, "w", encoding="utf-8") as f: json.dump(dados, f, indent=4)
+        tela_menu()
+    ctk.CTkButton(card, text="Cadastrar", command=salvar).pack(pady=10)
+    ctk.CTkButton(card, text="Voltar", fg_color="transparent", border_width=1, command=tela_menu).pack()
 
 # ======================
 # RANKING
 # ======================
 def tela_ranking():
     limpar_tela()
-
-    card = ctk.CTkFrame(app, corner_radius=20)
-    card.pack(expand=True, padx=80, pady=80)
-
-    ctk.CTkLabel(card, text="Ranking", font=("Arial Black", 28)).pack(pady=20)
-
-    with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
-        dados = json.load(f)
-
-    ranking = sorted(dados["jogadores"], key=lambda x: x["dinheiro"], reverse=True)
-
-    for i, j in enumerate(ranking, start=1):
-        ctk.CTkLabel(
-            card,
-            text=f"{i}. {j['nome']} - R${j['dinheiro']:.2f}",
-            font=("Arial", 16)
-        ).pack(pady=6)
-
-    ctk.CTkButton(card, text="Voltar", width=200, command=tela_menu).pack(pady=20)
-
+    card = ctk.CTkFrame(app, corner_radius=20, fg_color=COR_FUNDO_PAINEL)
+    card.pack(pady=20, padx=100, fill="both", expand=True)
+    ctk.CTkLabel(card, text="RANKING", font=("Arial Black", 28), text_color=COR_DOURADO).pack(pady=15)
+    lista = ctk.CTkScrollableFrame(card, fg_color="transparent", height=350)
+    lista.pack(fill="both", expand=True, padx=20, pady=5)
+    
+    try:
+        with open(JOGADORES_PATH, "r", encoding="utf-8") as f: dados = json.load(f)
+        ranking_data = sorted(dados["jogadores"], key=lambda x: x.get("pontuacao", 0), reverse=True)
+        for i, j in enumerate(ranking_data[:10], start=1):
+            item = ctk.CTkFrame(lista, fg_color="#2d3748", height=35)
+            item.pack(fill="x", pady=2)
+            ctk.CTkLabel(item, text=f"{i}º {j['nome']}", font=("Arial", 14, "bold")).pack(side="left", padx=15)
+            ctk.CTkLabel(item, text=f"{int(j.get('pontuacao',0))} pts", text_color=COR_DOURADO, font=("Arial", 14, "bold")).pack(side="right", padx=15)
+    except: pass
+    
+    ctk.CTkButton(card, text="VOLTAR AO MENU", width=200, height=45, command=tela_menu).pack(pady=20)
 
 # ======================
-# JOGO
+# JOGO (AJUSTADO: PONTOS E VISÃO)
 # ======================
 def tela_jogo():
     limpar_tela()
-    global dinheiro
+    global pontuacao_total
+    with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f: dados = json.load(f)
 
-    with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f:
-        dados = json.load(f)
+    area_obj = random.choice(dados["conteudo"])
+    pergunta = random.choice(area_obj["perguntas"])
+    dificuldade = pergunta.get("dificuldade", "fácil").lower()
 
-    area = random.choice(dados["conteudo"])
-    pergunta = random.choice(area["perguntas"])
+    topo = ctk.CTkFrame(app, height=60, fg_color="#0f172a")
+    topo.pack(fill="x")
+    ctk.CTkLabel(topo, text=f"Mestre: {jogador_atual.nome}", font=("Arial", 14, "bold")).pack(side="left", padx=20)
+    pontos_label = ctk.CTkLabel(topo, text=f"PONTOS: {int(pontuacao_total)}", font=("Arial Black", 20), text_color=COR_DOURADO)
+    pontos_label.pack(side="right", padx=20)
 
-    topo = ctk.CTkFrame(app)
-    topo.pack(fill="x", padx=20, pady=10)
+    card = ctk.CTkFrame(app, corner_radius=20, fg_color=COR_FUNDO_PAINEL)
+    card.pack(expand=True, padx=40, pady=20, fill="both")
 
+    # Matéria e Nível
     ctk.CTkLabel(
-        topo,
-        text=f"Jogador: {jogador_atual.nome}",
-        font=("Arial", 14, "bold")
-    ).pack(side="left")
+        card, 
+        text=f"{area_obj['area'].upper()} | DIFICULDADE: {dificuldade.upper()}", 
+        font=("Arial", 18, "bold"), 
+        text_color="#cbd5e1" 
+    ).pack(pady=(25, 10))
 
-    saldo_label = ctk.CTkLabel(
-        topo,
-        text=f"Saldo: R${dinheiro:.2f}",
-        font=("Arial", 14, "bold")
-    )
-    saldo_label.pack(side="right")
+    ctk.CTkLabel(card, text=pergunta["pergunta"], font=("Arial", 26, "bold"), wraplength=750).pack(pady=35)
 
-    card = ctk.CTkFrame(app, corner_radius=20)
-    card.pack(expand=True, padx=40, pady=20)
+    lista_botoes = {}
+    def responder(letra_escolhida):
+        global pontuacao_total
+        # Bloqueia cliques múltiplos
+        for b in lista_botoes.values(): b.configure(state="disabled")
+        
+        correta = pergunta["correta"]
+        pontos_map = {"fácil": 10, "médio": 25, "média": 25, "difícil": 50}
+        valor = pontos_map.get(dificuldade, 10)
 
-    ctk.CTkLabel(
-        card,
-        text=f"Tema: {area['area']}",
-        font=("Arial", 14, "italic")
-    ).pack(pady=10)
+        # Revela cores e coloca TEXTO PRETO
+        for letra, botao in lista_botoes.items():
+            if letra == correta:
+                botao.configure(fg_color=VERDE_OK, text_color="black", font=("Arial", 18, "bold"))
+            else:
+                botao.configure(fg_color=VERMELHO_ERRO, text_color="black", font=("Arial", 18, "bold"))
 
-    ctk.CTkLabel(
-        card,
-        text=pergunta["pergunta"],
-        font=("Arial Black", 22),
-        wraplength=700,
-        justify="center"
-    ).pack(pady=25)
-
-    resultado = ctk.CTkLabel(card, text="", font=("Arial", 18))
-    resultado.pack(pady=10)
-
-    def responder(letra):
-        global dinheiro
-        if letra == pergunta["correta"]:
-            dinheiro += 1000
-            resultado.configure(text="Resposta correta!")
+        if letra_escolhida == correta:
+            pontuacao_total += valor
         else:
-            dinheiro /= 2
-            resultado.configure(text=f"Resposta errada! Correta: {pergunta['correta']}")
-
-        jogador_atual.saldo = dinheiro
+            pontuacao_total = max(0, pontuacao_total - (valor / 2)) # Perde metade do valor da questão se errar
+        
+        jogador_atual.saldo = pontuacao_total
         salvar_progresso(jogador_atual)
-        saldo_label.configure(text=f"Saldo: R${dinheiro:.2f}")
+        pontos_label.configure(text=f"PONTOS: {int(pontuacao_total)}")
 
     for alt in pergunta["respostas"]:
         letra = alt[0]
-        ctk.CTkButton(
-            card,
-            text=alt,
-            width=650,
-            height=60,
-            font=("Arial", 18, "bold"),
-            corner_radius=15,
+        btn = ctk.CTkButton(
+            card, text=alt, width=680, height=60, 
+            font=("Arial", 18, "bold"), fg_color="#334155", 
             command=lambda l=letra: responder(l)
-        ).pack(pady=8)
+        )
+        btn.pack(pady=7)
+        lista_botoes[letra] = btn
 
-    rodape = ctk.CTkFrame(app)
-    rodape.pack(pady=15)
+    # Rodapé
+    rodape = ctk.CTkFrame(app, fg_color="transparent")
+    rodape.pack(pady=25)
+    
+    ctk.CTkButton(
+        rodape, text="PRÓXIMA PERGUNTA", width=280, height=55, 
+        font=("Arial Black", 16), fg_color=COR_BOTAO_PADRAO, command=tela_jogo
+    ).pack(side="left", padx=15)
+    
+    ctk.CTkButton(
+        rodape, text="VOLTAR AO MENU", width=280, height=55, 
+        font=("Arial Black", 16), fg_color="transparent", border_width=2, command=tela_menu
+    ).pack(side="right", padx=15)
 
-    ctk.CTkButton(rodape, text="Próxima pergunta", width=200, command=tela_jogo).pack(side="left", padx=10)
-    ctk.CTkButton(rodape, text="Parar o jogo", width=200, command=tela_menu).pack(side="right", padx=10)
-
-
-# ======================
-# INÍCIO
-# ======================
 tela_menu()
 app.mainloop()

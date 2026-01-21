@@ -304,5 +304,4 @@ def Jogo(jogador_atual):
                     continue
                 elif escolha not in ["1", "2"]:
                     enunciado("\033[31mOpção inválida.\033[m")
-            
-                          
+

@@ -1,24 +1,24 @@
 {
     "jogadores": [
         {
-            "nome": "Teste",
-            "senha": "teste02",
+            "nome": "Vinícius",
+            "senha": "Vini123",
             "pontuacao": 0
         },
         {
             "nome": "Cezar",
             "senha": "AugustoB4",
-            "pontuacao": 245.9375
+            "pontuacao": 245
         },
         {
             "nome": "Anthony",
             "senha": "Gabryel1",
-            "pontuacao": 2.625
+            "pontuacao": 120.5
         },
         {
             "nome": "Gustavo",
             "senha": "Medeiros01",
-            "pontuacao": 240
+            "pontuacao": 395.0
         },
         {
             "nome": "Nataniel",
