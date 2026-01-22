@@ -3,4 +3,3 @@ class jogador:
         self.nome = nome
         self.senha = senha
         self.saldo = saldo
-

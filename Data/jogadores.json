@@ -1,11 +1,6 @@
 {
     "jogadores": [
         {
-            "nome": "Vinícius",
-            "senha": "Vini123",
-            "pontuacao": 0
-        },
-        {
             "nome": "Cezar",
             "senha": "AugustoB4",
             "pontuacao": 245
@@ -21,14 +16,9 @@
             "pontuacao": 395.0
         },
         {
-            "nome": "Nataniel",
-            "senha": "cantoleir0",
-            "pontuacao": 160.0
-        },
-        {
-            "nome": "Sofia",
-            "senha": "Sabin444",
-            "pontuacao": 45
+            "nome": "sofia",
+            "senha": "123456p.",
+            "pontuacao": 455
         }
     ]
 }
