@@ -65,8 +65,19 @@ def valida_senha(senha):
     return True
 
 def cadastrar():
-    with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
-        dados = json.load(f)
+    try:
+        with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+    except FileNotFoundError:
+        enunciado("\033[31mArquivo de jogadores não encontrado.\033[m")
+        dados = {"jogadores": []}
+    except json.JSONDecodeError:
+        enunciado("\033[31mErro no arquivo de jogadores.\033[m")
+        dados = {"jogadores": []}
+    except Exception as excessão:
+        enunciado("\033[31mErro inesperado ao carregar dados.\033[m")
+        print(excessão)
+        return None
     while True:
         nome = input("Crie seu nome de usuário: ").strip()
         nome_existente = False
@@ -88,12 +99,20 @@ def cadastrar():
         "senha": novo_jogador.senha,
         "pontuacao": 0,
     })
-    with open(JOGADORES_PATH, "w", encoding="utf-8") as f:
-        json.dump(dados, f, indent=4, ensure_ascii=False)
-        sleep(0.5)
+    try:
+        with open(JOGADORES_PATH, "w", encoding="utf-8") as f:
+                json.dump(dados, f, indent=4, ensure_ascii=False)
+    except IOError:
+        enunciado("\033[31mErro ao salvar o cadastro.\033[m")
+        return None
     enunciado(f"Jogador(a) {nome} cadastrado com sucesso!")
-    with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
-            dados = json.load(f)      
+    try:
+        with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
+                dados = json.load(f)  
+    except Exception as excessão:
+        enunciado("\033[31mErro ao acessar dados após cadastro.[m")
+        print(excessão)
+        return None    
     for jogador_data in dados["jogadores"]:
         if jogador_data["nome"] == nome and jogador_data["senha"] == senha:
             jogador_atual = jogador(nome, senha, jogador_data["pontuacao"]) 
@@ -104,8 +123,19 @@ def login():
     while True:
         nome = input("Digite seu nome de usuário: ").strip()
         senha = input("Digite sua senha: ").strip()
-        with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
-            dados = json.load(f)      
+        try:
+            with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
+                dados = json.load(f)
+        except FileNotFoundError:
+            enunciado("\033[31mNenhum usuário cadastrado ainda.\033[m")
+            return None
+        except json.JSONDecodeError:
+            enunciado("\033[31mErro no banco de dados de usuários.\033[m")
+            return None
+        except Exception as excessão:
+            enunciado("\033[31mErro ao acessar os dados.\033[m")
+            print(excessão)
+            return None      
         for jogador_data in dados["jogadores"]:
             if jogador_data["nome"] == nome and jogador_data["senha"] == senha:
                 jogador_atual = jogador(nome, senha, jogador_data["pontuacao"]) 
@@ -116,8 +146,19 @@ def login():
 
 #Funções do jogo
 def ranking(jogador_atual=None):
-    with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
-        dados = json.load(f)
+    try:
+        with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+    except FileNotFoundError:
+        enunciado("\033[31mNenhum usuário cadastrado ainda.\033[m")
+        return
+    except json.JSONDecodeError:
+        enunciado("\033[31mErro no banco de dados de usuários.\033[m")
+        return
+    except Exception as excessão:
+        enunciado("\033[31mErro ao acessar os dados.\033[m")
+        print(excessão)
+        return
     jogadores_ordenados = sorted(dados["jogadores"], key=lambda x: x["pontuacao"], reverse=True)
     enunciado("\033[34mRanking dos Jogadores\033[m".center(46))
     sleep(0.5)
@@ -141,8 +182,13 @@ def ranking(jogador_atual=None):
 
 
 def salvar_progresso(jogador_atual):
-    with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
-        dados = json.load(f)  
+    try:
+        with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+    except Exception as excessão:
+        enunciado("Erro ao salvar progresso.")
+        print(excessão)
+        return 
     encontrado = False
     for jog in dados["jogadores"]:
         if jog["nome"] == jogador_atual.nome and jog["senha"] == jogador_atual.senha:
@@ -200,8 +246,13 @@ def Jogo(jogador_atual):
     acertos = 0
     erros = 0
     perguntas_usadas = []
-    with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f:
+    try: 
+        with open(PERGUNTAS_PATH, "r", encoding="utf-8") as f:
             dados = json.load(f)
+    except Exception as excessão:
+        enunciado("\033[31mErro ao carregar as perguntas.\033[m")
+        print(excessão)
+        return
 
     while True:
         contPerg += 1
