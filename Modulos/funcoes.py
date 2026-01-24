@@ -1,4 +1,5 @@
 import json
+import os
 import random
 from classes import jogador
 from pathlib import Path
@@ -9,6 +10,9 @@ JOGADORES_PATH = "Data/jogadores.json"
 PERGUNTAS_PATH = "Data/perguntas.json"
 
 #Detalhes 
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def enunciado(texto):
     print("-" * 40)
     print(texto)
@@ -87,13 +91,13 @@ def cadastrar():
     with open(JOGADORES_PATH, "w", encoding="utf-8") as f:
         json.dump(dados, f, indent=4, ensure_ascii=False)
         sleep(0.5)
-    enunciado(f"Jogador {nome} cadastrado com sucesso!")
+    enunciado(f"Jogador(a) {nome} cadastrado com sucesso!")
     with open(JOGADORES_PATH, "r", encoding="utf-8") as f:
             dados = json.load(f)      
     for jogador_data in dados["jogadores"]:
         if jogador_data["nome"] == nome and jogador_data["senha"] == senha:
             jogador_atual = jogador(nome, senha, jogador_data["pontuacao"]) 
-            emcima(f"Seja bem-vindo(a), {nome}!")
+            embaixo(f"Seja bem-vindo(a), {nome}!")
             return jogador_atual
 
 def login():
@@ -105,7 +109,7 @@ def login():
         for jogador_data in dados["jogadores"]:
             if jogador_data["nome"] == nome and jogador_data["senha"] == senha:
                 jogador_atual = jogador(nome, senha, jogador_data["pontuacao"]) 
-                emcima(f"Bem-vindo de volta, {nome}!")
+                enunciado(f"Bem-vindo de volta, {nome}!")
                 return jogador_atual
         enunciado("\033[31mNome de usuário ou senha incorretos. Tente novamente.\033[m")
 
@@ -184,9 +188,10 @@ def Jogo(jogador_atual):
     emcima("Processando...")
     sleep(0.5)
     enunciado("Responda às perguntas corretamente e ganhe pontos!\nQuanto mais pontos, maior seu ranking.\nBoa sorte!")
-    sleep(0.5)
+    sleep(1.5)
     embaixo("Iniciando a competição...")
     sleep(1)
+    limpar_tela()
     
 
     #Controle
@@ -243,6 +248,8 @@ def Jogo(jogador_atual):
                     pontuacao += 25
                 elif dificuldade == "difícil":
                     pontuacao += 50
+                sleep(1.5)
+                limpar_tela()
             else:
                 erros += 1
                 sleep(0.5)
@@ -264,6 +271,9 @@ def Jogo(jogador_atual):
                         pontuacao -= (pontuacao * 0.5)
                 elif pontuacao < 1:
                     pontuacao = 1
+                sleep(1.5)
+                limpar_tela()
+            print("-" * 40)
             print(f"Sua pontuação atual: \033[4m{pontuacao:.0f}\033[m")
             print("-" * 40)
             if QuanPerg == QuanPerg // 2:
@@ -294,13 +304,15 @@ def Jogo(jogador_atual):
             while escolha not in ["1", "2"]:
                 escolha = menu2("Voltar ao menu inicial", "Começar outra partida")
                 if escolha == "1":
+                    limpar_tela()
                     print("-" * 40)
                     return 
                 elif escolha == "2":
                     enunciado("Iniciando nova partida...")
-                    sleep(1)
+                    sleep(1.5)
                     contPerg = 0
                     perguntas_usadas.clear()
+                    limpar_tela()
                     continue
                 elif escolha not in ["1", "2"]:
                     enunciado("\033[31mOpção inválida.\033[m")

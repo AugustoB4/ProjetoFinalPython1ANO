@@ -11,9 +11,11 @@ while True:
     else:
         escolha = menu3("Começar a competição", "Sua posição no ranking", "Sair do Jogo")
     if escolha == "3":
+        limpar_tela()
         sleep(1)
         break
     elif escolha == "2":
+        limpar_tela()
         ranking(jogador_atual)
         print("-" * 40)
         continue
@@ -21,16 +23,20 @@ while True:
         if jogador_atual is not None:
             Jogo(jogador_atual)
             continue
+        limpar_tela()
         enunciado("\033[35mConecte-se ou cadastre-se para jogar!\033[m".center(48))
         while True:
             escolha = menu2("Cadastrar", "Entrar")
             print("-" * 40)
             if escolha == "1":
                 jogador_atual = cadastrar()
-                print("\nCadastro concluído!")
+                sleep(1)
+                limpar_tela()
                 break
             elif escolha == "2":
                 jogador_atual = login()
+                sleep(1)
+                limpar_tela()
                 if jogador_atual:   
                     break           
                 else:

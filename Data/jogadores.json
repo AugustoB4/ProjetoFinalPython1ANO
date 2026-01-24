@@ -3,7 +3,7 @@
         {
             "nome": "Cezar",
             "senha": "AugustoB4",
-            "pontuacao": 225
+            "pontuacao": 180
         },
         {
             "nome": "Anthony",
@@ -19,6 +19,26 @@
             "nome": "sofia",
             "senha": "123456p.",
             "pontuacao": 455
+        },
+        {
+            "nome": "Josilene",
+            "senha": "Josil890",
+            "pontuacao": 0
+        },
+        {
+            "nome": "Maria",
+            "senha": "Carlinh0s",
+            "pontuacao": 0
+        },
+        {
+            "nome": "Samuel",
+            "senha": "Samuel001",
+            "pontuacao": 0
+        },
+        {
+            "nome": "Samuel1",
+            "senha": "Lucena91",
+            "pontuacao": 0
         }
     ]
 }
